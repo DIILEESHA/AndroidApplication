@@ -44,6 +44,7 @@
             android:layout_weight="3">
 
             <androidx.cardview.widget.CardView
+            android:id="@+id/c1"
             android:layout_width="100dp"
                 android:layout_margin="10dp"
                 app:cardElevation="4dp"
@@ -57,8 +58,11 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_margin="15dp"
                         android:layout_height="100dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
                         android:src="@drawable/addvehicle" />
 
                     <TextView
@@ -68,13 +72,14 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginStart="30dp"
                         android:layout_marginBottom="20dp"
-                        android:text="Add Your Vehicle"
-                        android:textStyle="bold"
+                        android:text="Add  Vehicle"
                         android:textColor="#000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
             </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView
+>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="100dp"
@@ -106,6 +111,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/c2"
                 android:layout_width="100dp"
                 android:layout_margin="10dp"
                 app:cardElevation="4dp"
