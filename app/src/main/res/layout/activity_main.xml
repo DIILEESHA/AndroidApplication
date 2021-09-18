@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/holo_blue_dark"
+    android:background="#fff"
     android:weightSum="5"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -12,14 +12,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:background="@drawable/ty">
 
         <ImageView
             android:id="@+id/imageview"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/logo" />
+            android:src="@drawable/cv" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,9 +29,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="Master Travelers"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:textSize="20sp"
-            android:textStyle="italic" />
+            android:textStyle="bold" />
     </RelativeLayout>
 
         <GridLayout
@@ -39,29 +40,38 @@
             android:background="@drawable/background_bg"
             android:rowCount="2"
             android:columnCount="2"
-            android:padding="30dp"
+            android:padding="10dp"
             android:layout_weight="3">
 
             <androidx.cardview.widget.CardView
             android:layout_width="100dp"
                 android:layout_margin="10dp"
                 app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-        <ImageView
-            android:layout_width="130dp"
-            android:src="@drawable/reg"
-            android:layout_height="130dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="20dp"
-                    android:layout_height="wrap_content"
-                    android:text="user"/>
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_margin="15dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/addvehicle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Add Your Vehicle"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
 
             </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -70,6 +80,7 @@
                 android:layout_width="100dp"
                 android:layout_margin="10dp"
                 app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
@@ -85,8 +96,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginBottom="20dp"
-                        android:text="user" />
+                        android:text="user"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -95,6 +109,7 @@
                 android:layout_width="100dp"
                 android:layout_margin="10dp"
                 app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
@@ -110,9 +125,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginBottom="20dp"
-                        android:text="user" />
-
+                        android:text="user"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -120,6 +137,7 @@
                 android:layout_width="0dp"
                 android:layout_margin="10dp"
                 app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
@@ -130,12 +148,16 @@
                         android:layout_width="130dp"
                         android:src="@drawable/reg"
                         android:layout_height="130dp"/>
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="20dp"
                         android:layout_height="wrap_content"
-                        android:text="user"/>
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="user"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
