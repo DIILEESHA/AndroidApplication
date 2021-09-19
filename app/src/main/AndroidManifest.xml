@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
         <activity
+            android:name=".ShowActivity"
+            android:exported="true" />
+        <activity
             android:name=".Dashboard"
             android:exported="true" />
         <activity
