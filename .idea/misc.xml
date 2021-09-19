@@ -4,11 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MadProject/app/src/main/res/drawable/background_bg.xml" value="0.1" />
-        <entry key="..\:/MadProject/app/src/main/res/layout/activity_addvehicle.xml" value="0.1" />
-        <entry key="..\:/MadProject/app/src/main/res/layout/activity_isuru.xml" value="0.2" />
-        <entry key="..\:/MadProject/app/src/main/res/layout/activity_jnitha.xml" value="0.17083333333333334" />
-        <entry key="..\:/MadProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/MadProject/app/src/main/res/layout/activity_senura.xml" value="0.22447916666666667" />
+        <entry key="..\:/MadProject/app/src/main/res/layout/activity_main.xml" value="0.17010309278350516" />
+        <entry key="..\:/Master travelerd and auto parts/AndroidApplication/app/src/main/res/layout/activity_login.xml" value="0.184375" />
+        <entry key="..\:/Master travelerd and auto parts/AndroidApplication/app/src/main/res/layout/activity_main.xml" value="0.39800995024875624" />
+        <entry key="..\:/Master travelerd and auto parts/AndroidApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.5" />
       </map>
     </option>
   </component>
