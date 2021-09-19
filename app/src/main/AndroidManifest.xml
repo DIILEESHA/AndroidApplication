@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
         <activity
+            android:name=".JnithaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SenuraActivity"
+            android:exported="true" />
+        <activity
+            android:name=".IsuruActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddActivity"
             android:exported="true" />
         <activity
