@@ -32,6 +32,15 @@
             android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="33dp"
+            android:onClick="logout"
+            android:layout_height="29dp"
+            app:srcCompat="@drawable/logout"
+            tools:ignore="UsingOnClickInXml" />
+
     </RelativeLayout>
 
         <GridLayout

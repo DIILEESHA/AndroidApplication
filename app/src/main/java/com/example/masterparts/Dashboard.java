@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener{
 
@@ -58,6 +60,14 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 break;
         }
 
+
+    }
+
+    public void logout(View view) {
+
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(),Login.class));
+            finish();
 
     }
 }
