@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,7 +25,7 @@ public class AddActivity extends AppCompatActivity {
 
     //view
     EditText mTitleEt, mDescriptionEt,mBrandEt,mEnginecEt,mFueluseEt,mAddressEt;
-    Button mSaveBtn;
+    Button mSaveBtn,mListBtn;
 
     //dialog
     ProgressDialog pd;
@@ -49,6 +50,7 @@ public class AddActivity extends AppCompatActivity {
         mFueluseEt = findViewById(R.id.fueluseEt);
         mAddressEt = findViewById(R.id.addressEt);
         mSaveBtn = findViewById(R.id.saveBtn);
+        mListBtn = findViewById(R.id.listBtn);
 
         //progress
         pd = new ProgressDialog(this);
@@ -71,14 +73,18 @@ public class AddActivity extends AppCompatActivity {
                 //function call to upload data
                 uploadData(title, description ,brand ,enginec ,fueluse ,address);
 
-                if(TextUtils.isEmpty(title)){
-                mTitleEt.setError("fields are empty");
-                return;
-                }
-
             }
-        });
 
+
+
+        });
+            mListBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(AddActivity.this ,ListActivity.class));
+                    finish();
+                }
+            });
     }
 
 //    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
