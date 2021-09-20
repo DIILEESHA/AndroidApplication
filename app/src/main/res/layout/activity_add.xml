@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
@@ -15,6 +15,7 @@
         android:background="@drawable/bg_edittext"
         android:padding="10dp"
         android:inputType="text"
+
         android:hint="Brand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -79,12 +80,12 @@
         android:text="Save" />
 
     <Button
-        android:id="@+id/showeBtn"
+        android:id="@+id/listBtn"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:forceHasOverlappingRendering="true"
-        android:backgroundTint="@color/browser_actions_title_color"
-        android:text="Shpw List" />
+        android:backgroundTint="@color/black"
+        android:text="Show List" />
 </LinearLayout>
