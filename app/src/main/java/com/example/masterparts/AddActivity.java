@@ -90,7 +90,7 @@ public class AddActivity extends AppCompatActivity {
 //    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
 
 
-    private void uploadData(String title, String description ,String brand, String enginec, String fueluse, String address) {
+    private void uploadData(String title, String description,String brand, String enginec, String fueluse, String address) {
         //set title
         pd.setTitle("Processing");
         //when the user click save btn
@@ -102,10 +102,10 @@ public class AddActivity extends AppCompatActivity {
         doc.put("id", id);
         doc.put("title", title);
         doc.put("description", description);
-        doc.put("brand", brand);
+       doc.put("brand", brand);
         doc.put("enginec",enginec);
         doc.put("fueluse",fueluse);
-        doc.put("address",address);
+       doc.put("address",address);
 
 
 
