@@ -66,7 +66,7 @@ public class ListActivity extends AppCompatActivity {
 
     }
         private void showData(){
-        pd.setTitle("Loading");
+        pd.setTitle("Loading !!");
 
         pd.show();
 
