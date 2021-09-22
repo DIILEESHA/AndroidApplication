@@ -20,6 +20,14 @@
         <entry key="..\:/newly/AndroidApplication/app/src/main/res/drawable-normal/bg_edittext.xml" value="0.19114583333333332" />
         <entry key="..\:/newly/AndroidApplication/app/src/main/res/drawable/bg_edittext.xml" value="0.1" />
         <entry key="..\:/newly/AndroidApplication/app/src/main/res/layout/activity_add.xml" value="0.22" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/drawable/background_bg.xml" value="0.240625" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/drawable/bg_edittext.xml" value="0.240625" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.22447916666666667" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/layout/activity_list.xml" value="0.22447916666666667" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/layout/activity_login.xml" value="0.22083333333333333" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/layout/activity_navigationview.xml" value="0.20555555555555555" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/layout/activity_show.xml" value="0.22083333333333333" />
+        <entry key="..\:/newty/AndroidApplication/app/src/main/res/layout/model_layout.xml" value="0.22083333333333333" />
       </map>
     </option>
   </component>

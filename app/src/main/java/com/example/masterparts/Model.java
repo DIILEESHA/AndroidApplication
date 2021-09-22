@@ -1,15 +1,18 @@
 package com.example.masterparts;
 
-
-
-
     public class Model {
         String id, title, description, brand, enginec, fueluse,  address;
 
         public Model(String id, String title, String string) {
         }
 
-        public Model(String id, String title, String description, String brand, String enginec, String fueluse, String address) {
+        public Model(String id,
+                     String title,
+                     String description,
+                     String brand,
+                     String enginec,
+                     String fueluse,
+                     String address) {
             this.id = id;
             this.title = title;
             this.description = description;
