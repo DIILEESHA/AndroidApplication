@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -101,7 +104,6 @@ public class AddActivity extends AppCompatActivity {
                     String address = mAddressEt.getText().toString().trim();
 
                     updateData(id,title,description,brand,enginec,fueluse,address);
-
                 }
                 else{
                     String title = mTitleEt.getText().toString().trim();
@@ -110,6 +112,29 @@ public class AddActivity extends AppCompatActivity {
                     String enginec = mEnginecEt.getText().toString().trim();
                     String fueluse = mFueluseEt.getText().toString().trim();
                     String address = mAddressEt.getText().toString().trim();
+
+                    if (TextUtils.isDigitsOnly(title)) {
+                        mTitleEt.setError("Plz enter the value");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(description)) {
+                        mDescriptionEt.setError("Filled is Empty");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(brand)) {
+                        mBrandEt.setError("Filled is Empty");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(enginec)) {
+                        mEnginecEt.setError("Filled is Empty");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(fueluse)) {
+                        mFueluseEt.setError("Filled is Empty");
+                    }
+                    else if (TextUtils.isEmpty(address)) {
+                        mAddressEt.setError("Filled is Empty");
+                    }
 
                     uploadData(title, description,brand,enginec,fueluse,address);
                 }
@@ -125,9 +150,8 @@ public class AddActivity extends AppCompatActivity {
                 //function call to upload data
                 uploadData(title, description ,brand ,enginec ,fueluse ,address);
 
+
             }
-
-
 
         });
             mListBtn.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +215,10 @@ public class AddActivity extends AppCompatActivity {
                         //this will be called data added successfully
 
                         pd.dismiss();
-                        Toast.makeText(AddActivity.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
+
+                        new SweetAlertDialog(AddActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Successed!")
+                                .show();
 
                     }
                 })
@@ -203,7 +230,9 @@ public class AddActivity extends AppCompatActivity {
                         //show error
 
                         pd.dismiss();
-                        Toast.makeText(AddActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            new SweetAlertDialog(AddActivity.this,SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Something went wrong")
+                                    .show();
 
                     }
                 });

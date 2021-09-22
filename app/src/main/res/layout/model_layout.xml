@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/black"
+    app:cardBackgroundColor="@color/purple_700"
     android:background="@drawable/background"
     app:contentPadding="10dp"
     app:cardCornerRadius="10dp"
@@ -19,7 +19,7 @@
             android:id="@+id/rTitletv"
             android:textSize="20sp"
             android:textColor="@color/white"
-            android:text="Brand"
+            android:text="Brand : Brand:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

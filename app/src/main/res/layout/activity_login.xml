@@ -16,14 +16,14 @@
         android:shadowColor="#FD5454"
         android:text="Login"
         android:textColor="#FFEB3B"
-        android:textSize="34sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.201" />
 
     <EditText
         android:id="@+id/Login2"
@@ -83,10 +83,10 @@
         android:id="@+id/textView4"
         android:layout_width="171dp"
         android:layout_height="47dp"
-        android:text="Don`t have an account? Create one now"
+        android:text="Don`t have an account? Create New One"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
