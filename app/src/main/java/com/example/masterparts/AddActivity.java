@@ -1,6 +1,7 @@
 package com.example.masterparts;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -33,14 +34,15 @@ public class AddActivity extends AppCompatActivity {
     //firebase instance
     FirebaseFirestore db;
 
+    String pId,pTitle,pDescription,pBrand,pEnginec,pFueluse,pAddress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-//
-//        //action bar and title
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setTitle("Add Data");
+        ActionBar actionBar = getSupportActionBar();
+       // actionBar.setTitle("Add Data");
+
 
         //initalize values
         mTitleEt = findViewById(R.id.titleEt);
@@ -52,6 +54,32 @@ public class AddActivity extends AppCompatActivity {
         mSaveBtn = findViewById(R.id.saveBtn);
         mListBtn = findViewById(R.id.listBtn);
 
+                Bundle bundle = getIntent().getExtras();
+                if(bundle != null){
+                    //actionBar.setTitle("Update Data ");
+                    mSaveBtn.setText("Update Data");
+                    pId = bundle.getString("pId");
+                    pTitle = bundle.getString("pTitle");
+                    pDescription = bundle.getString("pDescription");
+                    pBrand = bundle.getString("pBrand");
+                    pEnginec = bundle.getString("pEnginec");
+                    pFueluse = bundle.getString("pFueluse");
+                    pAddress = bundle.getString("pAddress");
+
+                    //setdata
+                    mTitleEt.setText(pTitle);
+                    mDescriptionEt.setText(pDescription);
+                    mBrandEt.setText(pBrand);
+                    mEnginecEt.setText(pEnginec);
+                    mFueluseEt.setText(pFueluse);
+                    mAddressEt.setText(pAddress);
+
+                }
+                else{
+//                   actionBar.setTitle("Add Data");
+                    mSaveBtn.setText("Save");
+                }
+
         //progress
         pd = new ProgressDialog(this);
 
@@ -62,6 +90,30 @@ public class AddActivity extends AppCompatActivity {
         mSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle1 = getIntent().getExtras();
+                if (bundle != null){
+                     String id = pId;
+                    String title = mTitleEt.getText().toString().trim();
+                    String description = mDescriptionEt.getText().toString().trim();
+                    String brand = mBrandEt.getText().toString().trim();
+                    String enginec = mEnginecEt.getText().toString().trim();
+                    String fueluse = mFueluseEt.getText().toString().trim();
+                    String address = mAddressEt.getText().toString().trim();
+
+                    updateData(id,title,description,brand,enginec,fueluse,address);
+
+                }
+                else{
+                    String title = mTitleEt.getText().toString().trim();
+                    String description = mDescriptionEt.getText().toString().trim();
+                    String brand = mBrandEt.getText().toString().trim();
+                    String enginec = mEnginecEt.getText().toString().trim();
+                    String fueluse = mFueluseEt.getText().toString().trim();
+                    String address = mAddressEt.getText().toString().trim();
+
+                    uploadData(title, description,brand,enginec,fueluse,address);
+                }
+
                 //input data
                 String title = mTitleEt.getText().toString().trim();
                 String description = mDescriptionEt.getText().toString().trim();
@@ -85,6 +137,28 @@ public class AddActivity extends AppCompatActivity {
                     finish();
                 }
             });
+    }
+
+    private void updateData(String id, String title, String description, String brand, String enginec, String fueluse, String address) {
+        //set title
+        pd.setTitle("Updating....");
+        //when the user click save btn
+        pd.show();
+        db.collection("Documents").document(id)
+                .update("title",title,"description",description,"brand",brand,"enginec",enginec,"fueluse",fueluse,"address",address)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(AddActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                pd.dismiss();
+                Toast.makeText(AddActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 //    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
