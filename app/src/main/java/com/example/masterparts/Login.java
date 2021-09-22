@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class Login extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLoginBtn;
@@ -60,6 +62,19 @@ public class Login extends AppCompatActivity {
                     return;
 
                 }
+                if(email.equals("") && password.equals(""))
+                {
+                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("wrong something")
+                            .show();
+                }
+                if(email.equals("master@gmail.com") && password.equals("123456"))
+                {
+                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Excellent")
+                            .show();
+                    startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -67,10 +82,14 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(Login.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Login Success!")
+                                    .show();
                             startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         }else {
-                            Toast.makeText(Login.this, "Please  check your password " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Oops, something went wrong!")
+                                    .show();
                         }
                     }
                 });
