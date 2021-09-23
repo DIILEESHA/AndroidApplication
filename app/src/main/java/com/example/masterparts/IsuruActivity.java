@@ -1,16 +1,17 @@
 package com.example.masterparts;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,60 +24,153 @@ import java.util.UUID;
 
 public class IsuruActivity extends AppCompatActivity {
 
-    EditText mVehicleName,mSpareParts, mPlace, mModel, mPrice, mContactNum, mDescription;
-    Button mPostAdd;
-    FirebaseFirestore fStore;
+    //view
+    EditText mVehicleName, mSparePart,mPlace,mModle,mPrice,mContactNumber ,mDescription;
+    Button mSaveBtn1,mListBtn1;
+
+    //dialog
     ProgressDialog pd;
+
+    //firebase instance
+    FirebaseFirestore db;
+
+    String pId, pVehicleName, pSparePart, pPlace, pModle, pPrice, pContactNumber ,pDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_isuru);
+        ActionBar actionBar = getSupportActionBar();
+        // actionBar.setTitle("Add Data");
 
 
+        //initalize values
         mVehicleName = findViewById(R.id.Vehicle);
-        mSpareParts = findViewById(R.id.parts);
+        mSparePart = findViewById(R.id.parts);
         mPlace = findViewById(R.id.place);
-        mModel = findViewById(R.id.editTextTextPersonName7);
-        mPrice =findViewById(R.id.editTextTextPersonName2);
-        mContactNum = findViewById(R.id.editTextTextPersonName3);
-        mDescription =findViewById(R.id.editTextTextPersonName4);
-        mPostAdd = findViewById(R.id.button);
+        mModle = findViewById(R.id.editTextTextPersonName7);
+        mPrice = findViewById(R.id.editTextTextPersonName2);
+        mContactNumber = findViewById(R.id.editTextTextPersonName3);
+        mDescription = findViewById(R.id.editTextTextPersonName4);
+        mSaveBtn1 = findViewById(R.id.button);
+        mListBtn1= findViewById(R.id.mbtn4);
 
-        fStore = FirebaseFirestore.getInstance();
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            //actionBar.setTitle("Update Data ");
+            mSaveBtn1.setText("Update Data");
+            pId = bundle.getString("pId");
+            pVehicleName = bundle.getString("pVehicleName");
+            pSparePart = bundle.getString("pSparePart");
+            pPlace = bundle.getString("pPlace");
+            pModle = bundle.getString("pModle");
+            pPlace = bundle.getString("pPlace");
+            pContactNumber = bundle.getString("pContactNumber");
+            pDescription = bundle.getString("pDescription");
+
+            //setdata
+            mVehicleName.setText(pVehicleName);
+            mSparePart.setText(pSparePart);
+            mPlace.setText(pPlace);
+            mModle.setText(pModle);
+            mPrice.setText(pPrice);
+            mContactNumber.setText(pContactNumber);
+            mDescription.setText(pDescription);
+
+        }
+        else{
+//                   actionBar.setTitle("Add Data");
+            mSaveBtn1.setText("Save");
+        }
+
+        //progress
         pd = new ProgressDialog(this);
 
-        mPostAdd.setOnClickListener(new View.OnClickListener() {
+        //firestore
+        db = FirebaseFirestore.getInstance();
+
+        //click button to send the data
+        mSaveBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //input data
-                String VehicleName = mVehicleName.getText().toString().trim();
-                String SpareParts = mSpareParts.getText().toString().trim();
-                String Place = mPlace.getText().toString().trim();
-                String Model = mModel.getText().toString().trim();
-                String Price = mPrice.getText().toString().trim();
-                String Phone = mContactNum.getText().toString().trim();
-                String Description = mDescription.getText().toString().trim();
+                Bundle bundle1 = getIntent().getExtras();
+                if (bundle != null){
+                    String id = pId;
+                    String vehicleName = mVehicleName.getText().toString().trim();
+                    String sparepart = mSparePart.getText().toString().trim();
+                    String place = mPlace.getText().toString().trim();
+                    String modle = mModle.getText().toString().trim();
+                    String price = mPrice.getText().toString().trim();
+                    String contactNumber = mContactNumber.getText().toString().trim();
+                    String description = mDescription.getText().toString().trim();
 
+                    updateData(id,vehicleName,sparepart,place,modle,price,contactNumber,description);
 
+                }
+                else{
+                    String vehicleName = mVehicleName.getText().toString().trim();
+                    String sparepart = mSparePart.getText().toString().trim();
+                    String place = mPlace.getText().toString().trim();
+                    String modle = mModle.getText().toString().trim();
+                    String price = mPrice.getText().toString().trim();
+                    String contactNumber = mContactNumber.getText().toString().trim();
+                    String description = mDescription.getText().toString().trim();
 
-                //function call to upload data
-                uploadData(VehicleName, SpareParts ,Place ,Model ,Price ,Phone, Description );
-
-                if(TextUtils.isEmpty(VehicleName)){
-                    mVehicleName.setError("fields are empty");
-                    return;
+                    uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
                 }
 
+                //input data
+                String vehicleName = mVehicleName.getText().toString().trim();
+                String sparepart = mSparePart.getText().toString().trim();
+                String place = mPlace.getText().toString().trim();
+                String modle = mModle.getText().toString().trim();
+                String price = mPrice.getText().toString().trim();
+                String contactNumber = mContactNumber.getText().toString().trim();
+                String description = mDescription.getText().toString().trim();;
+
+                //function call to upload data
+                uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
+
+            }
+
+
+
+        });
+        mListBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(IsuruActivity.this ,SpareListActivity.class));
+                finish();
             }
         });
-
     }
 
+    private void updateData(String id, String vehicleName, String sparePart, String place, String model, String price, String contactNumber , String description) {
+        //set title
+        pd.setTitle("Updating....");
+        //when the user click save btn
+        pd.show();
+        db.collection("Documents").document(id)
+                .update("vehicleName",vehicleName,"sparePart",sparePart,"place",place,"model",model,"price",price,"contactNumber",contactNumber,"description",description)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(IsuruActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                pd.dismiss();
+                Toast.makeText(IsuruActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+//    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
 
 
-
-    private void uploadData(String VehicleName, String SpareParts ,String Place, String Model, String Price, String Phone, String Description) {
+    private void uploadData(String vehicleName, String sparePart, String place, String model, String price, String contactNumber , String description) {
         //set title
         pd.setTitle("Processing");
         //when the user click save btn
@@ -86,22 +180,22 @@ public class IsuruActivity extends AppCompatActivity {
 
         Map<String, Object> doc = new HashMap<>();
         doc.put("id", id);
-        doc.put("VehicleName", VehicleName);
-        doc.put("SpareParts", SpareParts);
-        doc.put("Place", Place);
-        doc.put("Model",Model);
-        doc.put("Price",Price);
-        doc.put("Phone",Phone);
-        doc.put("Description",Description);
+        doc.put("vehicleName",vehicleName);
+        doc.put("sparePart", sparePart);
+        doc.put("place", place);
+        doc.put("modle",model);
+        doc.put("price",price);
+        doc.put("contactNumber",contactNumber);
+        doc.put("description",description);
 
 
 
         //add this data
-        fStore.collection("parts").document(id).set(doc)
+        db.collection("parts").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-
+                        //this will be called data added successfully
 
                         pd.dismiss();
                         Toast.makeText(IsuruActivity.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
@@ -111,7 +205,9 @@ public class IsuruActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        //unsuccessfully
 
+                        //show error
 
                         pd.dismiss();
                         Toast.makeText(IsuruActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -120,15 +216,3 @@ public class IsuruActivity extends AppCompatActivity {
                 });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
