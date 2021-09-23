@@ -135,7 +135,11 @@ public class AddActivity extends AppCompatActivity {
                     else if (TextUtils.isEmpty(address)) {
                         mAddressEt.setError("Filled is Empty");
                     }
-
+                    else if(title.isEmpty() && description.isEmpty() && brand.isEmpty() && enginec.isEmpty() && fueluse.isEmpty() && address.isEmpty()) {
+                        new SweetAlertDialog(AddActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("All fields are empty!")
+                                .show();
+                    }
                     uploadData(title, description,brand,enginec,fueluse,address);
                 }
 
@@ -164,23 +168,25 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void updateData(String id, String title, String description, String brand, String enginec, String fueluse, String address) {
-        //set title
-        pd.setTitle("Updating....");
-        //when the user click save btn
-        pd.show();
+
         db.collection("Documents").document(id)
                 .update("title",title,"description",description,"brand",brand,"enginec",enginec,"fueluse",fueluse,"address",address)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(AddActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+
+                        new SweetAlertDialog(AddActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Update successfully !")
+                                .show();
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                pd.dismiss();
-                Toast.makeText(AddActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                new SweetAlertDialog(AddActivity.this,SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("Try Again!")
+                        .show();
             }
         });
     }
@@ -189,11 +195,7 @@ public class AddActivity extends AppCompatActivity {
 
 
     private void uploadData(String title, String description,String brand, String enginec, String fueluse, String address) {
-        //set title
-        pd.setTitle("Processing");
-        //when the user click save btn
-        pd.show();
-        //random id to each data to be stored
+
         String id = UUID.randomUUID().toString();
 
         Map<String, Object> doc = new HashMap<>();
@@ -212,12 +214,10 @@ public class AddActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        //this will be called data added successfully
 
                         pd.dismiss();
-
                         new SweetAlertDialog(AddActivity.this,SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("Successed!")
+                            .setTitleText("Successefully!")
                                 .show();
 
                     }

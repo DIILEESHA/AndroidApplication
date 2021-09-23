@@ -23,6 +23,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 
 public class ListActivity extends AppCompatActivity {
 
@@ -64,13 +66,14 @@ public class ListActivity extends AppCompatActivity {
         mAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ListActivity.this,AddActivity.class));
-
+                startActivity(new Intent(ListActivity.this, AddActivity.class));
+                finish();
             }
         });
 
     }
-        private void showData(){
+
+    private void showData() {
         pd.setTitle("Loading !!");
 
         pd.show();
@@ -80,19 +83,20 @@ public class ListActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        modelList.clear();
                         pd.dismiss();
-                        for (DocumentSnapshot doc:task.getResult()){
-                           Model model = new Model(doc.getString("id"),
-                                   doc.getString("title"),
-                                  doc.getString("description"),
+                        for (DocumentSnapshot doc : task.getResult()) {
+                            Model model = new Model(doc.getString("id"),
+                                    doc.getString("title"),
+                                    doc.getString("description"),
                                     doc.getString("brand"),
                                     doc.getString("enginec"),
                                     doc.getString("fueluse"),
                                     doc.getString("address"));
 
-                                        modelList.add(model);
+                            modelList.add(model);
                         }
-                        adapter = new CustomAdapter(ListActivity.this,modelList);
+                        adapter = new CustomAdapter(ListActivity.this, modelList);
 
                         mRecycleView.setAdapter(adapter);
                     }
@@ -105,5 +109,30 @@ public class ListActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    public void deleteData(int index) {
+//            pd.setTitle("Deleting Data");
+//            pd.show();
+
+            db.collection("Documents").document(modelList.get(index).getId())
+                        .delete()
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            modelList.clear();
+                                new SweetAlertDialog(ListActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                                        .setTitleText("Deleted Succesfully")
+                                        .show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                                pd.dismiss();
+                            Toast.makeText(ListActivity.this,e.getMessage(), Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    });
     }
 }

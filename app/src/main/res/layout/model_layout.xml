@@ -19,7 +19,8 @@
             android:id="@+id/rTitletv"
             android:textSize="20sp"
             android:textColor="@color/white"
-            android:text="Brand : Brand:"
+            android:text="Brand"
+            android:hint="Brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

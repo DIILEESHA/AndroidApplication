@@ -62,19 +62,19 @@ public class Login extends AppCompatActivity {
                     return;
 
                 }
-                if(email.equals("") && password.equals(""))
-                {
-                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
-                        .setTitleText("wrong something")
-                            .show();
-                }
-                if(email.equals("master@gmail.com") && password.equals("123456"))
-                {
-                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
-                            .setTitleText("Excellent")
-                            .show();
-                    startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                }
+//                if(email.equals("") && password.equals(""))
+//                {
+//                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+//                        .setTitleText("wrong something")
+//                            .show();
+//                }
+//                if(email.equals("master@gmail.com") && password.equals("123456"))
+//                {
+//                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+//                            .setTitleText("Excellent")
+//                            .show();
+//                    startActivity(new Intent(getApplicationContext(),Dashboard.class));
+//                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -82,7 +82,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+                            new SweetAlertDialog(Login.this,SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("Login Success!")
                                     .show();
                             startActivity(new Intent(getApplicationContext(),Dashboard.class));
