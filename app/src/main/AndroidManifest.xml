@@ -11,12 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
+<!--        <activity-->
+<!--            android:name=".SpareModel"-->
+<!--            android:exported="true" />-->
+        <activity
+            android:name=".SpareListActivity"
+            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".SparePartList"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".SparePartAdapter"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".ListActivity"
             android:exported="true" />
-        <activity
-            android:name=".ShowActivity"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".Show"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".Dashboard"
             android:exported="true" />
