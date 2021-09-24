@@ -78,6 +78,7 @@ public class SpareAdpter extends RecyclerView.Adapter<SpareViewHolder> {
                             spareListActivity.startActivity(intent);
                         }
                         if(which == 1){
+                            spareListActivity.deleteData(position);
 
                         }
                     }

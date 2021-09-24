@@ -22,16 +22,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class IsuruActivity extends AppCompatActivity {
 
-    //view
+
     EditText mVehicleName, mSparePart,mPlace,mModle,mPrice,mContactNumber ,mDescription;
     Button mSaveBtn1,mListBtn1;
 
-    //dialog
+
     ProgressDialog pd;
 
-    //firebase instance
+
     FirebaseFirestore db;
 
     String pId, pVehicleName, pSparePart, pPlace, pModle, pPrice, pContactNumber ,pDescription;
@@ -41,10 +43,10 @@ public class IsuruActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_isuru);
         ActionBar actionBar = getSupportActionBar();
-        // actionBar.setTitle("Add Data");
 
 
-        //initalize values
+
+
         mVehicleName = findViewById(R.id.Vehicle);
         mSparePart = findViewById(R.id.parts);
         mPlace = findViewById(R.id.place);
@@ -57,18 +59,18 @@ public class IsuruActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
-            //actionBar.setTitle("Update Data ");
+
             mSaveBtn1.setText("Update Data");
             pId = bundle.getString("pId");
             pVehicleName = bundle.getString("pVehicleName");
             pSparePart = bundle.getString("pSparePart");
             pPlace = bundle.getString("pPlace");
             pModle = bundle.getString("pModle");
-            pPlace = bundle.getString("pPlace");
+            pPrice = bundle.getString("pPrice");
             pContactNumber = bundle.getString("pContactNumber");
             pDescription = bundle.getString("pDescription");
 
-            //setdata
+
             mVehicleName.setText(pVehicleName);
             mSparePart.setText(pSparePart);
             mPlace.setText(pPlace);
@@ -79,17 +81,17 @@ public class IsuruActivity extends AppCompatActivity {
 
         }
         else{
-//                   actionBar.setTitle("Add Data");
+
             mSaveBtn1.setText("Save");
         }
 
-        //progress
+
         pd = new ProgressDialog(this);
 
-        //firestore
+
         db = FirebaseFirestore.getInstance();
 
-        //click button to send the data
+
         mSaveBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,10 +118,40 @@ public class IsuruActivity extends AppCompatActivity {
                     String contactNumber = mContactNumber.getText().toString().trim();
                     String description = mDescription.getText().toString().trim();
 
+                    if (TextUtils.isDigitsOnly(vehicleName)) {
+                        mVehicleName.setError("Plz enter the value");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(sparepart)) {
+                        mSparePart.setError("Field is Empty");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(place)) {
+                        mPlace.setError("Field is Empty");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(modle)) {
+                        mModle.setError("Field is Empty");
+                        return;
+                    }
+                    else if (TextUtils.isEmpty(price)) {
+                        mPrice.setError("Field is Empty");
+                    }
+                    else if (TextUtils.isEmpty(contactNumber)) {
+                        mContactNumber.setError("Field is Empty");
+                    }
+                    else if (TextUtils.isEmpty(description)) {
+                        mDescription.setError("Field is Empty");
+                    }
+                    else if(vehicleName.isEmpty()  && sparepart.isEmpty() && place.isEmpty() && modle.isEmpty() && price.isEmpty()&& contactNumber.isEmpty()&& description.isEmpty() ){
+                        new SweetAlertDialog(IsuruActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("All fields are empty ")
+                                .show();
+                    }
                     uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
                 }
 
-                //input data
+
                 String vehicleName = mVehicleName.getText().toString().trim();
                 String sparepart = mSparePart.getText().toString().trim();
                 String place = mPlace.getText().toString().trim();
@@ -128,7 +160,7 @@ public class IsuruActivity extends AppCompatActivity {
                 String contactNumber = mContactNumber.getText().toString().trim();
                 String description = mDescription.getText().toString().trim();;
 
-                //function call to upload data
+
                 uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
 
             }
@@ -146,9 +178,9 @@ public class IsuruActivity extends AppCompatActivity {
     }
 
     private void updateData(String id, String vehicleName, String sparePart, String place, String model, String price, String contactNumber , String description) {
-        //set title
+
         pd.setTitle("Updating....");
-        //when the user click save btn
+
         pd.show();
         db.collection("Documents").document(id)
                 .update("vehicleName",vehicleName,"sparePart",sparePart,"place",place,"model",model,"price",price,"contactNumber",contactNumber,"description",description)
@@ -167,15 +199,15 @@ public class IsuruActivity extends AppCompatActivity {
         });
     }
 
-//    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
+
 
 
     private void uploadData(String vehicleName, String sparePart, String place, String model, String price, String contactNumber , String description) {
-        //set title
+
         pd.setTitle("Processing");
-        //when the user click save btn
+
         pd.show();
-        //random id to each data to be stored
+
         String id = UUID.randomUUID().toString();
 
         Map<String, Object> doc = new HashMap<>();
@@ -190,12 +222,12 @@ public class IsuruActivity extends AppCompatActivity {
 
 
 
-        //add this data
+
         db.collection("parts").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        //this will be called data added successfully
+
 
                         pd.dismiss();
                         Toast.makeText(IsuruActivity.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
@@ -205,9 +237,7 @@ public class IsuruActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //unsuccessfully
 
-                        //show error
 
                         pd.dismiss();
                         Toast.makeText(IsuruActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();

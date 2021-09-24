@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start|fill"
-    android:background="@drawable/background"
-    android:backgroundTint="#000000"
+    android:background="@drawable/cut_background"
+    android:backgroundTint="#009688"
     android:backgroundTintMode="screen"
     tools:context=".IsuruActivity">
 
@@ -17,7 +17,7 @@
         android:fontFamily="@font/atomic_age"
         android:text="Spare Part"
         android:textAlignment="center"
-        android:textColor="#3F51B5"
+        android:textColor="#E91E63"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:scrollbarStyle="outsideInset"
         android:text="Description"
-        android:textColor="#E91E63"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +50,6 @@
         android:layout_height="36dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Enter vehicle name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.12"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
@@ -66,15 +65,14 @@
         android:layout_height="56dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Description"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.608"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintVertical_bias="0.61"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -82,7 +80,6 @@
         android:layout_height="36dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +87,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -98,7 +95,6 @@
         android:layout_height="36dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Price"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.431"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName7"
@@ -114,7 +110,6 @@
         android:layout_height="36dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Spare Part Model"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.356"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/place"
@@ -130,7 +125,6 @@
         android:layout_height="36dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Enter place"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,7 +132,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.277"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/parts"
@@ -146,7 +140,6 @@
         android:layout_height="36dp"
         android:background="@drawable/text"
         android:ems="10"
-        android:hint="Enter spare parts name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +147,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 
     <TextView
@@ -163,7 +156,7 @@
         android:layout_height="wrap_content"
         android:scrollbarStyle="outsideInset"
         android:text="Vehicle Name"
-        android:textColor="#E91E63"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -179,7 +172,7 @@
         android:layout_height="wrap_content"
         android:scrollbarStyle="outsideInset"
         android:text="Spare Parts"
-        android:textColor="#E91E63"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -194,8 +187,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbarStyle="outsideInset"
-        android:text=" Place"
-        android:textColor="#E91E63"
+        android:text="Place"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -211,7 +204,7 @@
         android:layout_height="wrap_content"
         android:scrollbarStyle="outsideInset"
         android:text="Parts Model"
-        android:textColor="#E91E63"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -227,7 +220,7 @@
         android:layout_height="29dp"
         android:scrollbarStyle="outsideInset"
         android:text="Contact Number"
-        android:textColor="#E91E63"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -242,7 +235,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price"
-        android:textColor="#E91E63"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -250,7 +243,7 @@
         app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.433" />
 
     <Button
         android:id="@+id/button"

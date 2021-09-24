@@ -22,6 +22,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class SpareListActivity extends AppCompatActivity {
 
     List<SpareModel> spareModelList = new ArrayList<>();
@@ -35,6 +37,8 @@ public class SpareListActivity extends AppCompatActivity {
     SpareAdpter spareAdpter;
 
     ProgressDialog pd;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,7 @@ public class SpareListActivity extends AppCompatActivity {
         mAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SpareListActivity.this,IsuruActivity.class));
+                startActivity(new Intent(SpareListActivity.this, IsuruActivity.class));
 
             }
         });
@@ -75,7 +79,7 @@ public class SpareListActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         pd.dismiss();
-                        for (DocumentSnapshot doc:task.getResult()){
+                        for (DocumentSnapshot doc : task.getResult()) {
                             SpareModel model = new SpareModel(doc.getString("id"),
                                     doc.getString("vehicleName"),
                                     doc.getString("sparePart"),
@@ -85,9 +89,9 @@ public class SpareListActivity extends AppCompatActivity {
                                     doc.getString("contactNumber"),
                                     doc.getString("description"));
 
-                                    spareModelList.add(model);
+                            spareModelList.add(model);
                         }
-                        spareAdpter = new SpareAdpter(SpareListActivity.this,spareModelList);
+                        spareAdpter = new SpareAdpter(SpareListActivity.this, spareModelList);
 
                         mRecycleView.setAdapter(spareAdpter);
                     }
@@ -100,6 +104,30 @@ public class SpareListActivity extends AppCompatActivity {
 
                     }
                 });
-
     }
+        public void deleteData ( int index){
+
+
+            db.collection("parts").document(spareModelList.get(index).getId())
+                    .delete()
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            spareModelList.clear();
+                            new SweetAlertDialog(SpareListActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("Deleted Succesfully")
+                                    .show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            pd.dismiss();
+                            Toast.makeText(SpareListActivity.this, e.getMessage(), Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    });
+
+        }
+
 }

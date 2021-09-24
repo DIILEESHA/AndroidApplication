@@ -15,14 +15,13 @@
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recycle_view"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
-        android:layout_marginTop="476dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:src="@drawable/ic_action_add" />
+        android:src="@drawable/ic_action_add"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </RelativeLayout>
