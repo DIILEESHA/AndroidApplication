@@ -4,17 +4,17 @@ package com.example.masterparts;
 
 
 public class SpareModel {
-    String id, vehicleName, sparePart, place, model, price, contactNumber, description;
+    String id, vehicleName, sparePart, place, modle, price, contactNumber, description;
 
     public SpareModel(String id, String vehicleName, String string) {
     }
 
-    public SpareModel(String id, String vehicleName, String sparePart, String place, String model, String price, String contactNumber,String description) {
+    public SpareModel(String id, String vehicleName, String sparePart, String place, String modle, String price, String contactNumber,String description) {
         this.id = id;
         this.vehicleName = vehicleName;
         this.sparePart = sparePart;
         this.place = place;
-        this.model = model;
+        this.modle = modle;
         this.price = price;
         this.contactNumber = contactNumber;
         this.description = description;
@@ -52,12 +52,12 @@ public class SpareModel {
         this.place = place;
     }
 
-    public String getModel() {
-        return model;
+    public String getModle() {
+        return modle;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setModle(String modle) {
+        this.modle = modle;
     }
 
     public String getPrice() {

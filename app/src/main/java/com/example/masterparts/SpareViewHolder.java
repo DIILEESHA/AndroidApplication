@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SpareViewHolder extends RecyclerView.ViewHolder {
 
-    TextView mVehicleName,mSparePart, mPlace, mModel, mPrice, mContactNumber ,mDescription ;
+    TextView mVehicleName,mSparePart, mPlace, mModle, mPrice, mContactNumber ,mDescription ;
     View mView;
 
     public SpareViewHolder(@NonNull View itemView) {
@@ -33,7 +33,7 @@ public class SpareViewHolder extends RecyclerView.ViewHolder {
         mVehicleName = itemView.findViewById(R.id.VehicleName);
         mSparePart = itemView.findViewById(R.id.SparePart);
         mPlace = itemView.findViewById(R.id.place);
-        mModel= itemView.findViewById(R.id.Model);
+        mModle= itemView.findViewById(R.id.Model);
         mPrice = itemView.findViewById(R.id.price);
         mContactNumber = itemView.findViewById(R.id.contactNumber);
         mDescription = itemView.findViewById(R.id.description);

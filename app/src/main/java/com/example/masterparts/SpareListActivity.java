@@ -80,7 +80,7 @@ public class SpareListActivity extends AppCompatActivity {
                                     doc.getString("vehicleName"),
                                     doc.getString("sparePart"),
                                     doc.getString("place"),
-                                    doc.getString("model"),
+                                    doc.getString("modle"),
                                     doc.getString("price"),
                                     doc.getString("contactNumber"),
                                     doc.getString("description"));

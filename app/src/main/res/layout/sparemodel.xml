@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="230dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/black"
+    app:cardBackgroundColor="@color/material_blue_grey_80"
     android:background="@drawable/background"
     app:contentPadding="10dp"
     app:cardCornerRadius="10dp"
@@ -11,17 +11,18 @@
     app:cardUseCompatPadding="true">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="220dp"
+        android:layout_marginLeft="160dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/VehicleName"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="VehicleName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="VehicleName"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/SparePart"
@@ -58,14 +59,80 @@
             android:text="Contact Number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <TextView
             android:id="@+id/description"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="Description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:padding="2dp"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VehicleName :"
+        android:textStyle="bold"
+        android:textColor="@color/blue_btn_bg_color"/>
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Spare Part Name :"
+        android:textColor="@color/blue_btn_bg_color"/>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_marginTop="58dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Place :"
+        android:textColor="@color/blue_btn_bg_color"/>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_marginTop="83dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Part Model :"
+        android:textColor="@color/blue_btn_bg_color"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_marginTop="110dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Price :"
+        android:textColor="@color/blue_btn_bg_color"/>
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_marginTop="138dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Contact Number :"
+        android:textColor="@color/blue_btn_bg_color"/>
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_marginTop="164dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Description :"
+        android:textColor="@color/blue_btn_bg_color"/>
+
+
 </androidx.cardview.widget.CardView>

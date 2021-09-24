@@ -37,9 +37,9 @@ public class SpareAdpter extends RecyclerView.Adapter<SpareViewHolder> {
             @Override
             public void onItemClick(View view, int position) {
                 String vehicleName = spareModelList.get(position).getVehicleName();
-                String spareParts = spareModelList.get(position).getSparePart();
+                String sparePart = spareModelList.get(position).getSparePart();
                 String place = spareModelList.get(position).getPlace();
-                String model = spareModelList.get(position).getModel();
+                String modle = spareModelList.get(position).getModle();
                 String price = spareModelList.get(position).getPrice();
                 String contactNumber = spareModelList.get(position).getContactNumber();
                 String description = spareModelList.get(position).getDescription();
@@ -60,7 +60,7 @@ public class SpareAdpter extends RecyclerView.Adapter<SpareViewHolder> {
                             String vehicleName = spareModelList.get(position).getVehicleName();
                             String sparePart = spareModelList.get(position).getSparePart();
                             String place = spareModelList.get(position).getPlace();
-                            String model = spareModelList.get(position).getModel();
+                            String model = spareModelList.get(position).getModle();
                             String price = spareModelList.get(position).getPrice();
                             String contactNumber = spareModelList.get(position).getContactNumber();
                             String description = spareModelList.get(position).getDescription();
@@ -70,7 +70,7 @@ public class SpareAdpter extends RecyclerView.Adapter<SpareViewHolder> {
                             intent.putExtra("pVehicleName",vehicleName);
                             intent.putExtra("pSparePart",sparePart);
                             intent.putExtra("pPlace",place);
-                            intent.putExtra("pModel",model);
+                            intent.putExtra("pModle",model);
                             intent.putExtra("pPrice",price);
                             intent.putExtra("pContactNumber",contactNumber);
                             intent.putExtra("pDescription",description);
@@ -95,7 +95,7 @@ public class SpareAdpter extends RecyclerView.Adapter<SpareViewHolder> {
         viewHolder.mVehicleName.setText(spareModelList.get(i).getVehicleName());
         viewHolder.mSparePart.setText(spareModelList.get(i).getSparePart());
         viewHolder.mPlace.setText(spareModelList.get(i).getPlace());
-        viewHolder.mModel.setText(spareModelList.get(i).getModel());
+        viewHolder.mModle.setText(spareModelList.get(i).getModle());
         viewHolder.mPrice.setText(spareModelList.get(i).getPrice());
         viewHolder.mContactNumber.setText(spareModelList.get(i).getContactNumber());
         viewHolder.mDescription.setText(spareModelList.get(i).getDescription());
