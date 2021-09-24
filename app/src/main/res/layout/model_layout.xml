@@ -3,15 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/purple_700"
+    app:cardBackgroundColor="@color/purple_500"
     android:background="@drawable/background"
     app:contentPadding="10dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="6dp"
     app:cardMaxElevation="2dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
+        android:layout_marginLeft="190dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -20,7 +21,6 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:text="Brand"
-            android:hint="Brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -60,5 +60,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_marginRight="190dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Brand :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="RegNo :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="EngineCC :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Fuel Used :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Address :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="20sp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/white"
+        android:text="Description :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
