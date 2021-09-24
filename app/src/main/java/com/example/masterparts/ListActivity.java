@@ -45,7 +45,10 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
+//
+//        //action bar and title
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setTitle("List Data");
 
         db = FirebaseFirestore.getInstance();
 
@@ -71,9 +74,9 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void showData() {
-        pd.setTitle("Loading !!");
-
-        pd.show();
+//        pd.setTitle("Loading !!");
+//
+//        pd.show();
 
         db.collection("Documents")
                 .get()

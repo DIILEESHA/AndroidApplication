@@ -63,19 +63,19 @@ public class Login extends AppCompatActivity {
                     return;
 
                 }
-//                if(email.equals("") && password.equals(""))
-//                {
-//                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
-//                        .setTitleText("wrong something")
-//                            .show();
-//                }
-//                if(email.equals("master@gmail.com") && password.equals("123456"))
-//                {
-//                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
-//                            .setTitleText("Excellent")
-//                            .show();
-//                    startActivity(new Intent(getApplicationContext(),Dashboard.class));
-//                }
+                if(email.equals("") && password.equals(""))
+                {
+                    new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText("wrong something")
+                            .show();
+                }
+                if(email.equals("master@gmail.com") && password.equals("123456"))
+                {
+                    new SweetAlertDialog(Login.this,SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Login Successed!")
+                            .show();
+                    startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 

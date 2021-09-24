@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:forceHasOverlappingRendering="true"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/black"
         android:text="Show List"
         android:textStyle="italic"/>
 </LinearLayout>
