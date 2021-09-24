@@ -11,6 +11,7 @@
 
 
     <ImageView
+        android:id="@+id/profilepicture"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"

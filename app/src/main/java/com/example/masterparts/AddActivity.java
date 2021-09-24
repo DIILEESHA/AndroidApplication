@@ -44,10 +44,8 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
         ActionBar actionBar = getSupportActionBar();
-       // actionBar.setTitle("Add Data");
 
 
-        //initalize values
         mTitleEt = findViewById(R.id.titleEt);
         mDescriptionEt = findViewById(R.id.descriptionEt);
         mBrandEt = findViewById(R.id.brandEt);
@@ -69,7 +67,6 @@ public class AddActivity extends AppCompatActivity {
                     pFueluse = bundle.getString("pFueluse");
                     pAddress = bundle.getString("pAddress");
 
-                    //setdata
                     mTitleEt.setText(pTitle);
                     mDescriptionEt.setText(pDescription);
                     mBrandEt.setText(pBrand);
@@ -79,7 +76,7 @@ public class AddActivity extends AppCompatActivity {
 
                 }
                 else{
-//                   actionBar.setTitle("Add Data");
+
                     mSaveBtn.setText("Save");
                 }
 
@@ -118,22 +115,22 @@ public class AddActivity extends AppCompatActivity {
                         return;
                     }
                     else if (TextUtils.isEmpty(description)) {
-                        mDescriptionEt.setError("Filled is Empty");
+                        mDescriptionEt.setError("Fieled is Empty");
                         return;
                     }
                     else if (TextUtils.isEmpty(brand)) {
-                        mBrandEt.setError("Filled is Empty");
+                        mBrandEt.setError("Fieled is Empty");
                         return;
                     }
                     else if (TextUtils.isEmpty(enginec)) {
-                        mEnginecEt.setError("Filled is Empty");
+                        mEnginecEt.setError("Field is Empty");
                         return;
                     }
                     else if (TextUtils.isEmpty(fueluse)) {
-                        mFueluseEt.setError("Filled is Empty");
+                        mFueluseEt.setError("Field is Empty");
                     }
                     else if (TextUtils.isEmpty(address)) {
-                        mAddressEt.setError("Filled is Empty");
+                        mAddressEt.setError("Field is Empty");
                     }
                     else if(title.isEmpty() && description.isEmpty() && brand.isEmpty() && enginec.isEmpty() && fueluse.isEmpty() && address.isEmpty()) {
                         new SweetAlertDialog(AddActivity.this, SweetAlertDialog.ERROR_TYPE)
@@ -168,7 +165,6 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void updateData(String id, String title, String description, String brand, String enginec, String fueluse, String address) {
-
         db.collection("Documents").document(id)
                 .update("title",title,"description",description,"brand",brand,"enginec",enginec,"fueluse",fueluse,"address",address)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -207,27 +203,19 @@ public class AddActivity extends AppCompatActivity {
         doc.put("fueluse",fueluse);
        doc.put("address",address);
 
-
-
-        //add this data
         db.collection("Documents").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-
                         pd.dismiss();
                         new SweetAlertDialog(AddActivity.this,SweetAlertDialog.SUCCESS_TYPE)
                             .setTitleText("Successefully!")
                                 .show();
-
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //unsuccessfully
-
-                        //show error
 
                         pd.dismiss();
                             new SweetAlertDialog(AddActivity.this,SweetAlertDialog.ERROR_TYPE)

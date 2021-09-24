@@ -45,10 +45,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-//
-//        //action bar and title
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setTitle("List Data");
+
 
         db = FirebaseFirestore.getInstance();
 
@@ -112,8 +109,8 @@ public class ListActivity extends AppCompatActivity {
     }
 
     public void deleteData(int index) {
-//            pd.setTitle("Deleting Data");
-//            pd.show();
+            pd.setTitle("Deleting Data");
+            pd.show();
 
             db.collection("Documents").document(modelList.get(index).getId())
                         .delete()
