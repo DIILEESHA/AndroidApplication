@@ -7,7 +7,9 @@
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/drawable/background_bg.xml" value="0.23692307692307693" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/drawable/cut_background.xml" value="0.13148148148148148" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23692307692307693" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_about.xml" value="0.22447916666666667" />
+        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_add.xml" value="0.22447916666666667" />
+        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_list.xml" value="0.19537037037037036" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/cut_background.xml" value="0.1" />

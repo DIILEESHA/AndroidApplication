@@ -1,5 +1,6 @@
 package com.example.masterparts;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -31,18 +32,48 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Dashboard.this, AddActivity.class));
-                finish();
+
             }
         });
         main2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Dashboard.this, IsuruActivity.class));
-                finish();
+
             }
         });
+        main3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, SenuraActivity.class));
+
+            }
+        });
+        main4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, JnithaActivity.class));
+
+            }
+        });
+        main5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, AboutActivity.class));
+
+           }
+        });
+        main6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this,Login.class));
+            }
+        });
+
     }
 }
+
+
 
 //        main1.setOnClickListener(this);
 //        main2.setOnClickListener(this);

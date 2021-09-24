@@ -13,11 +13,11 @@
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textColor="@color/black"
         android:layout_margin="12sp"
-        android:textStyle="italic"
-        android:text="Dashboard"/>
+        android:textStyle="bold"
+        android:text="Master Parts"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -52,9 +52,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icons8_email_64"
+                    android:textAlignment="center"
                     />
-
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ckk"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -84,7 +90,13 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/icons8_email_64"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ckk"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
 
             </LinearLayout>
@@ -115,7 +127,13 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/icons8_email_64"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ckk"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
 
             </LinearLayout>
@@ -146,7 +164,13 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/icons8_email_64"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ckk"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
 
             </LinearLayout>
@@ -177,7 +201,13 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/icons8_email_64"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ckk"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
 
             </LinearLayout>
@@ -198,7 +228,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -206,10 +236,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icons8_email_64"
-                   />
+                    android:src="@drawable/logout1" />
 
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ckk"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
