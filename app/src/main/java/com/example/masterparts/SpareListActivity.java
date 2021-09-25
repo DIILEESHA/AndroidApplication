@@ -91,7 +91,8 @@ public class SpareListActivity extends AppCompatActivity {
 
                             spareModelList.add(model);
                         }
-                        spareAdpter = new SpareAdpter(SpareListActivity.this, spareModelList);
+                        spareAdpter= new SpareAdpter(SpareListActivity.this,spareModelList);
+                        //SpareAdpter= new SpareAdpter(SpareListActivity.this, spareModelList);
 
                         mRecycleView.setAdapter(spareAdpter);
                     }

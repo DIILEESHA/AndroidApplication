@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.masterparts">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
+<!--        <activity-->
+<!--            android:name=".DriverModel"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".ViewDriver"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".DriverAdapter"-->
+<!--            android:exported="true" />-->
+        <activity
+            android:name=".DriverList"
+            android:exported="true" />
         <activity
             android:name=".AboutActivity"
-            android:exported="true" />
-        <!-- <activity -->
+            android:exported="true" /> <!-- <activity -->
         <!-- android:name=".SpareModel" -->
         <!-- android:exported="true" /> -->
         <activity
@@ -65,5 +74,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#2580B3"
+    app:contentPadding="10dp"
+    app:cardCornerRadius="6dp"
+    app:cardMaxElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_marginLeft="190dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/firstname"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="FirstaName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lastname"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="LastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/nic"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="NIC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tpnumber"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="Tp Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/email"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_marginRight="190dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="FirstName :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="LastName :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="NIC :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="Tp Number :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="Email :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
