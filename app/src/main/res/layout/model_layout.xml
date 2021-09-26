@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#2580B3"
-    app:contentPadding="10dp"
-    app:cardCornerRadius="6dp"
-    app:cardMaxElevation="2dp"
+    app:cardBackgroundColor="?android:attr/colorPressedHighlight"
+    app:contentPadding="6dp"
+    android:background="@drawable/form"
+    app:cardCornerRadius="2dp"
+    app:cardMaxElevation="10dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -18,7 +19,7 @@
         <TextView
             android:id="@+id/rTitletv"
             android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="Brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -26,35 +27,35 @@
         <TextView
             android:id="@+id/rRegtv"
             android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="RegNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/renginetv"
             android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="EngineCC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/rfueltv"
             android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="Fuel Used"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/raddresstv"
             android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="Address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/rdescriptiontv"
             android:textSize="20sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="Description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -68,7 +69,7 @@
         android:orientation="vertical">
     <TextView
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Brand :"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -76,35 +77,35 @@
     <TextView
 
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="RegNo :"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
 
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="EngineCC :"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
 
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Fuel Used :"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
 
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Address :"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
         android:textSize="20sp"
         android:layout_marginTop="3dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Description :"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

@@ -10,14 +10,8 @@
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_about.xml" value="0.22447916666666667" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_add.xml" value="0.22447916666666667" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_driver_adapter.xml" value="0.2" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_driver_list.xml" value="0.2" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_driver_model.xml" value="0.1859375" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_isuru.xml" value="0.2" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_jnitha.xml" value="0.18" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_list.xml" value="0.19537037037037036" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
-        <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/activity_view_driver.xml" value="0.1140625" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/cut_background.xml" value="0.1" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/model_layout.xml" value="0.19537037037037036" />
         <entry key="..\:/MAD/AndroidApplication/app/src/main/res/layout/sparemodel.xml" value="0.22447916666666667" />
@@ -46,8 +40,13 @@
         <entry key="..\:/doan/AndroidApplication/app/src/main/res/layout/model_layout.xml" value="0.22" />
         <entry key="..\:/mad application/AndroidApplication/app/src/main/res/drawable/bg_edittext.xml" value="0.240625" />
         <entry key="..\:/mad application/AndroidApplication/app/src/main/res/drawable/cut_background.xml" value="0.240625" />
+        <entry key="..\:/mad application/AndroidApplication/app/src/main/res/drawable/email.xml" value="0.22962962962962963" />
         <entry key="..\:/mad application/AndroidApplication/app/src/main/res/drawable/form.xml" value="0.240625" />
+        <entry key="..\:/mad application/AndroidApplication/app/src/main/res/drawable/mail.xml" value="0.1" />
         <entry key="..\:/mad application/AndroidApplication/app/src/main/res/layout/activity_add.xml" value="0.22447916666666667" />
+        <entry key="..\:/mad application/AndroidApplication/app/src/main/res/layout/activity_cus.xml" value="0.22447916666666667" />
+        <entry key="..\:/mad application/AndroidApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.22447916666666667" />
+        <entry key="..\:/mad application/AndroidApplication/app/src/main/res/layout/activity_feedback.xml" value="0.22" />
         <entry key="..\:/mad application/AndroidApplication/app/src/main/res/layout/activity_list.xml" value="0.22447916666666667" />
         <entry key="..\:/mad application/AndroidApplication/app/src/main/res/layout/model_layout.xml" value="0.22447916666666667" />
         <entry key="..\:/newly/AndroidApplication/app/src/main/res/drawable-normal/bg_edittext.xml" value="0.19114583333333332" />

@@ -12,9 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
         <activity
-            android:name=".AboutActivity"
+            android:name=".feedback"
             android:exported="true" />
-        <!-- <activity -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true" /> <!-- <activity -->
         <!-- android:name=".SpareModel" -->
         <!-- android:exported="true" /> -->
         <activity

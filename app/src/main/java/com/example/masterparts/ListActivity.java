@@ -112,8 +112,6 @@ public class ListActivity extends AppCompatActivity {
     }
 
     public void deleteData(int index) {
-            pd.setTitle("Deleting Data");
-            pd.show();
 
             db.collection("Documents").document(modelList.get(index).getId())
                         .delete()

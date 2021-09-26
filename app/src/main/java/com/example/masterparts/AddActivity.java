@@ -1,31 +1,37 @@
 package com.example.masterparts;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class AddActivity extends AppCompatActivity {
+public class AddActivity<uri> extends AppCompatActivity {
 
     //view
     EditText mTitleEt, mDescriptionEt,mBrandEt,mEnginecEt,mFueluseEt,mAddressEt;
@@ -141,12 +147,12 @@ public class AddActivity extends AppCompatActivity {
                 }
 
                 //input data
-                String title = mTitleEt.getText().toString().trim();
-                String description = mDescriptionEt.getText().toString().trim();
-                String brand = mBrandEt.getText().toString().trim();
-                String enginec = mEnginecEt.getText().toString().trim();
-                String fueluse = mFueluseEt.getText().toString().trim();
-                String address = mAddressEt.getText().toString().trim();
+                String title = mTitleEt.getText().toString();
+                String description = mDescriptionEt.getText().toString();
+                String brand = mBrandEt.getText().toString();
+                String enginec = mEnginecEt.getText().toString();
+                String fueluse = mFueluseEt.getText().toString();
+                String address = mAddressEt.getText().toString();
 
                 //function call to upload data
                 uploadData(title, description ,brand ,enginec ,fueluse ,address);
@@ -186,9 +192,6 @@ public class AddActivity extends AppCompatActivity {
             }
         });
     }
-
-//    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
-
 
     private void uploadData(String title, String description,String brand, String enginec, String fueluse, String address) {
 
