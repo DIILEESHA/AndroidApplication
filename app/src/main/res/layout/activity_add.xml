@@ -83,7 +83,7 @@
         android:background="@drawable/mail"
         android:textStyle="bold"
         android:padding="10dp"
-        android:inputType="textMultiLine|textCapSentences"
+       android:lines="2"
         android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:forceHasOverlappingRendering="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="45dp"
         android:text="Save"
         android:backgroundTint="@color/main_orange_stroke_color"
         android:textStyle="italic"/>
