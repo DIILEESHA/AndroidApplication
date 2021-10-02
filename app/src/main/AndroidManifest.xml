@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
         <activity
+            android:name=".cuslist"
+            android:exported="true" />
+        <activity
+            android:name=".cusdashboard"
+            android:exported="true" />
+        <activity
             android:name=".feedback"
             android:exported="true" />
         <activity

@@ -116,7 +116,7 @@ public class AddActivity<uri> extends AppCompatActivity {
                     String fueluse = mFueluseEt.getText().toString().trim();
                     String address = mAddressEt.getText().toString().trim();
 
-                    if (TextUtils.isDigitsOnly(title)) {
+                    if (TextUtils.isEmpty(title)) {
                         mTitleEt.setError("Plz enter the value");
                         return;
                     }
@@ -124,8 +124,8 @@ public class AddActivity<uri> extends AppCompatActivity {
                         mDescriptionEt.setError("Fieled is Empty");
                         return;
                     }
-                    else if (TextUtils.isEmpty(brand)) {
-                        mBrandEt.setError("Fieled is Empty");
+                    else if (TextUtils.isDigitsOnly(brand)) {
+                        mBrandEt.setError("Plz enter the Word");
                         return;
                     }
                     else if (TextUtils.isEmpty(enginec)) {
@@ -137,11 +137,31 @@ public class AddActivity<uri> extends AppCompatActivity {
                     }
                     else if (TextUtils.isEmpty(address)) {
                         mAddressEt.setError("Field is Empty");
+
+
                     }
-                    else if(title.isEmpty() && description.isEmpty() && brand.isEmpty() && enginec.isEmpty() && fueluse.isEmpty() && address.isEmpty()) {
-                        new SweetAlertDialog(AddActivity.this, SweetAlertDialog.ERROR_TYPE)
-                                .setTitleText("All fields are empty!")
-                                .show();
+                    else if(title.length()==0){
+                        mTitleEt.setError("empty");
+
+                    }
+                    else if(description.length()==0){
+                        mDescriptionEt.setError("empty");
+
+                    }
+                    else if(brand.length()==0){
+                        mBrandEt.setError("empty");
+
+                    }
+                    else if(enginec.length()==0){
+                        mEnginecEt.setError("empty");
+
+                    }
+                    else if(fueluse.length()==0){
+                        mFueluseEt.setError("empty");
+
+                    }else if(address.length()==0){
+                        mAddressEt.setError("empty");
+
                     }
                     uploadData(title, description,brand,enginec,fueluse,address);
                 }
@@ -194,9 +214,7 @@ public class AddActivity<uri> extends AppCompatActivity {
     }
 
     private void uploadData(String title, String description,String brand, String enginec, String fueluse, String address) {
-
         String id = UUID.randomUUID().toString();
-
         Map<String, Object> doc = new HashMap<>();
         doc.put("id", id);
         doc.put("title", title);
@@ -205,7 +223,6 @@ public class AddActivity<uri> extends AppCompatActivity {
         doc.put("enginec",enginec);
         doc.put("fueluse",fueluse);
        doc.put("address",address);
-
         db.collection("Documents").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
