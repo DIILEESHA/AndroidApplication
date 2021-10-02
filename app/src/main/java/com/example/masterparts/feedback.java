@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.masterparts.databinding.ActivityMainBinding;
 
 
 public class feedback extends AppCompatActivity {
@@ -32,9 +31,9 @@ public class feedback extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mEmail = new Intent(Intent.ACTION_SEND);
-                mEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{ "abc@gmail.com"});
+                mEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{ "mastershopandsons@gmail.com"});
                 mEmail.putExtra(Intent.EXTRA_SUBJECT, "subject");
-                mEmail.putExtra(Intent.EXTRA_TEXT, "message"+etMsg.getText());
+                mEmail.putExtra(Intent.EXTRA_TEXT, ""+etMsg.getText());
 // prompts to choose email client
                 mEmail.setType("message/rfc822");
                 startActivity(Intent.createChooser(mEmail, "Choose Option!"));
@@ -44,17 +43,4 @@ public class feedback extends AppCompatActivity {
 }
 
 
-
-//        feedback = (Button) findViewById(R.id.feedback);
-//        feedback.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent  = new Intent(Intent.ACTION_SENDTO);
-//                String UriText = "mailto:" + Uri.encode("dileeshanawarathna18@gmail.com");
-//
-//                            Uri uri = Uri.parse(UriText);
-//                            intent.setData(uri);
-//                            startActivity(Intent.createChooser(intent,"send email"));
-//            }
-//        });
 

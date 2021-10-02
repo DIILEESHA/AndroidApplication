@@ -29,6 +29,7 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.model_layout,viewGroup,false);
 
         ViewHolder viewHolder = new ViewHolder(itemView);
@@ -52,6 +53,7 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(listActivity);
 
+
                 String[] options = {"Update", "Delete"};
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
@@ -74,7 +76,7 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
                             intent.putExtra("pEnginec",enginec);
                             intent.putExtra("pFueluse",fueluse);
                             intent.putExtra("pAddress",address);
-
+//
                             listActivity.startActivity(intent);
                         }
                         if(which == 1){

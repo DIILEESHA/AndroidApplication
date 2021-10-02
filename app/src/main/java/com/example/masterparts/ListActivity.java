@@ -26,7 +26,8 @@ import java.util.List;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-public class ListActivity extends AppCompatActivity {
+public class ListActivity  extends AppCompatActivity{
+
 
     List<Model> modelList = new ArrayList<>();
     RecyclerView mRecycleView;
@@ -74,10 +75,6 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void showData() {
-//        pd.setTitle("Loading !!");
-//
-//        pd.show();
-
         db.collection("Documents")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -93,7 +90,6 @@ public class ListActivity extends AppCompatActivity {
                                     doc.getString("enginec"),
                                     doc.getString("fueluse"),
                                     doc.getString("address"));
-
                             modelList.add(model);
                         }
                         adapter = new CustomAdapter(ListActivity.this, modelList);
@@ -106,7 +102,6 @@ public class ListActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         pd.dismiss();
                         Toast.makeText(ListActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
                 });
     }

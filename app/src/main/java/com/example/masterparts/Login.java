@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity {
                             new SweetAlertDialog(Login.this,SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("Login Success!")
                                     .show();
-                            startActivity(new Intent(getApplicationContext(),feedback.class));
+                            startActivity(new Intent(getApplicationContext(),cusdashboard.class));
                         }else {
                             new SweetAlertDialog(Login.this,SweetAlertDialog.ERROR_TYPE)
                                     .setTitleText("Oops, something went wrong!")
