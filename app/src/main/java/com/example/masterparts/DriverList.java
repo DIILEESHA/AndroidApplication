@@ -78,7 +78,7 @@ public class DriverList extends AppCompatActivity {
 //
 //        pd.show();
 
-        db.collection("Driver Details")
+        db.collection("Drivers")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -115,7 +115,7 @@ public class DriverList extends AppCompatActivity {
         pd.setTitle("Deleting Data");
         pd.show();
 
-        db.collection("Driver Details").document(modelList.get(index).getId())
+        db.collection("Drivers").document(modelList.get(index).getId())
                 .delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

@@ -155,7 +155,7 @@ public class JnithaActivity extends AppCompatActivity {
         mViewDriverDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(JnithaActivity.this ,SpareListActivity.class));
+                startActivity(new Intent(JnithaActivity.this ,DriverList.class));
                 finish();
             }
         });
@@ -206,7 +206,7 @@ public class JnithaActivity extends AppCompatActivity {
 
 
 
-        db.collection("drivers").document(id).set(doc)
+        db.collection("Drivers").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
