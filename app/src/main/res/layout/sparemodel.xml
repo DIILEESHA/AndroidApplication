@@ -22,43 +22,47 @@
             android:layout_height="wrap_content"
             android:text="VehicleName"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/SparePart"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="SparePart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="SparePart"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/place"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="Place"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Place"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/Model"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="Model"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Model"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/price"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="Price"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/contactNumber"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="Contact Number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Contact Number"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/description"
@@ -66,7 +70,7 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
 
     </LinearLayout>

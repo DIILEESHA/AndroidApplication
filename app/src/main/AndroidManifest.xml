@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Masterparts">
         <activity
+            android:name=".cus"
+            android:exported="true" />
+        <activity
             android:name=".cuslist"
             android:exported="true" />
         <activity

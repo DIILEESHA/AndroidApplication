@@ -9,7 +9,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addBtn"
@@ -23,5 +24,17 @@
         android:layout_marginBottom="5dp"
         android:src="@drawable/ic_action_add"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="151dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="131dp"
+        android:text="Spare  Parts"
+        android:textColor="#FF0000"
+        android:textSize="24sp" />
 
 </RelativeLayout>

@@ -1,16 +1,12 @@
 package com.example.masterparts;
 
-import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-
 
 public class cusdashboard extends AppCompatActivity {
 
@@ -41,8 +37,6 @@ public class cusdashboard extends AppCompatActivity {
                 startActivity(new Intent(cusdashboard.this,cuslist.class));
             }
         });
-    }
-}
 
 
 //        });
@@ -53,13 +47,16 @@ public class cusdashboard extends AppCompatActivity {
 //
 //            }
 ////        });
-//        main3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Dashboard.this, SenuraActivity.class));
-//
-//            }
-//        });
+        main3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(cusdashboard.this, cus.class));
+
+            }
+        });
+    }
+}
+
 //        main4.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
