@@ -27,7 +27,7 @@ import java.util.List;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-public class ListActivity  extends AppCompatActivity{
+public class ListActivity  extends AppCompatActivity {
 
 
     List<Model> modelList = new ArrayList<>();
@@ -42,8 +42,7 @@ public class ListActivity  extends AppCompatActivity{
 
     ProgressDialog pd;
 
-
-
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +57,7 @@ public class ListActivity  extends AppCompatActivity{
 
         mRecycleView = findViewById(R.id.recycle_view);
         mAddBtn = findViewById(R.id.addBtn);
-
-
-
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
         mRecycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         mRecycleView.setLayoutManager(layoutManager);
@@ -113,25 +110,63 @@ public class ListActivity  extends AppCompatActivity{
 
     public void deleteData(int index) {
 
-            db.collection("Documents").document(modelList.get(index).getId())
-                        .delete()
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            modelList.clear();
-                                new SweetAlertDialog(ListActivity.this,SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Deleted Succesfully")
-                                        .show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+        db.collection("Documents").document(modelList.get(index).getId())
+                .delete()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        modelList.clear();
+                        new SweetAlertDialog(ListActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Deleted Succesfully")
+                                .show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        pd.dismiss();
+                        Toast.makeText(ListActivity.this, e.getMessage(), Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                });
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                pd.setTitle("Loading !!");
+                pd.show();
+                db.collection("Documents")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                modelList.clear();
                                 pd.dismiss();
-                            Toast.makeText(ListActivity.this,e.getMessage(), Toast.LENGTH_SHORT)
-                                    .show();
-                        }
-                    });
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    Model model = new Model(doc.getString("id"),
+                                            doc.getString("title"),
+                                            doc.getString("description"),
+                                            doc.getString("brand"),
+                                            doc.getString("enginec"),
+                                            doc.getString("fueluse"),
+                                            doc.getString("address"));
+                                    modelList.add(model);
+                                }
+                                adapter = new CustomAdapter(ListActivity.this, modelList);
+
+                                mRecycleView.setAdapter(adapter);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                pd.dismiss();
+                                Toast.makeText(ListActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
     }
 }

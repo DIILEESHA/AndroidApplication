@@ -23,6 +23,8 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
             }
         });
+
+
         itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
