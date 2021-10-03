@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -42,6 +43,8 @@ public class ListActivity  extends AppCompatActivity{
     ProgressDialog pd;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +58,8 @@ public class ListActivity  extends AppCompatActivity{
 
         mRecycleView = findViewById(R.id.recycle_view);
         mAddBtn = findViewById(R.id.addBtn);
+
+
 
         mRecycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -127,5 +132,6 @@ public class ListActivity  extends AppCompatActivity{
                                     .show();
                         }
                     });
+
     }
 }

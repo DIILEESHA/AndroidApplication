@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -38,6 +39,8 @@ public class SpareListActivity extends AppCompatActivity {
 
     ProgressDialog pd;
 
+    SwipeRefreshLayout swipeRefreshLayout;
+
 
 
     @Override
@@ -49,12 +52,15 @@ public class SpareListActivity extends AppCompatActivity {
 
         mRecycleView = findViewById(R.id.recycle_view);
         mAddBtn = findViewById(R.id.addBtn);
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
 
         mRecycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         mRecycleView.setLayoutManager(layoutManager);
 
         pd = new ProgressDialog(this);
+
+
 
         showData();
 
@@ -67,6 +73,7 @@ public class SpareListActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void showData() {
         pd.setTitle("Loading !!");
@@ -128,6 +135,46 @@ public class SpareListActivity extends AppCompatActivity {
                                     .show();
                         }
                     });
+
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    pd.setTitle("Loading !!");
+                    pd.show();
+                    db.collection("parts")
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    pd.dismiss();
+                                    for (DocumentSnapshot doc : task.getResult()) {
+                                        SpareModel model = new SpareModel(doc.getString("id"),
+                                                doc.getString("vehicleName"),
+                                                doc.getString("sparePart"),
+                                                doc.getString("place"),
+                                                doc.getString("modle"),
+                                                doc.getString("price"),
+                                                doc.getString("contactNumber"),
+                                                doc.getString("description"));
+
+                                        spareModelList.add(model);
+                                    }
+                                    spareAdpter= new SpareAdpter(SpareListActivity.this,spareModelList);
+                                    mRecycleView.setAdapter(spareAdpter);
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    pd.dismiss();
+                                    Toast.makeText(SpareListActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                    swipeRefreshLayout.setRefreshing(false);
+
+                }
+
+            });
 
         }
 
