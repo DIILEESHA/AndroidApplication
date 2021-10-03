@@ -44,9 +44,6 @@ public class IsuruActivity extends AppCompatActivity {
         setContentView(R.layout.activity_isuru);
         ActionBar actionBar = getSupportActionBar();
 
-
-
-
         mVehicleName = findViewById(R.id.Vehicle);
         mSparePart = findViewById(R.id.parts);
         mPlace = findViewById(R.id.place);
@@ -151,18 +148,6 @@ public class IsuruActivity extends AppCompatActivity {
                     uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
                 }
 
-
-//                String vehicleName = mVehicleName.getText().toString().trim();
-//                String sparepart = mSparePart.getText().toString().trim();
-//                String place = mPlace.getText().toString().trim();
-//                String modle = mModle.getText().toString().trim();
-//                String price = mPrice.getText().toString().trim();
-//                String contactNumber = mContactNumber.getText().toString().trim();
-//                String description = mDescription.getText().toString().trim();;
-//
-//
-//                uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
-
             }
 
 
@@ -179,9 +164,7 @@ public class IsuruActivity extends AppCompatActivity {
 
     private void updateData(String id, String vehicleName, String sparePart, String place, String model, String price, String contactNumber , String description) {
 
-        pd.setTitle("Updating....");
 
-        pd.show();
         db.collection("parts").document(id)
                 .update("vehicleName",vehicleName,"sparePart",sparePart,"place",place,"model",model,"price",price,"contactNumber",contactNumber,"description",description)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -219,8 +202,6 @@ public class IsuruActivity extends AppCompatActivity {
         doc.put("price",price);
         doc.put("contactNumber",contactNumber);
         doc.put("description",description);
-
-
 
 
         db.collection("parts").document(id).set(doc)
