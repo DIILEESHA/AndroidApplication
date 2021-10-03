@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,14 +27,12 @@ import java.util.List;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-public class cuslist  extends AppCompatActivity{
-
+public class cuslist  extends AppCompatActivity {
+    FloatingActionButton mAddBtn;
 
     List<Model> modelList = new ArrayList<>();
     RecyclerView mRecycleView;
     RecyclerView.LayoutManager layoutManager;
-
-    FloatingActionButton mAddBtn;
 
     FirebaseFirestore db;
 
@@ -45,7 +44,8 @@ public class cuslist  extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_cuslist);
+//        Rent1 = findViewById(R.id.rent1);
 //
 //        //action bar and title
 //        ActionBar actionBar = getSupportActionBar();
@@ -54,14 +54,11 @@ public class cuslist  extends AppCompatActivity{
         db = FirebaseFirestore.getInstance();
 
         mRecycleView = findViewById(R.id.recycle_view);
-        mAddBtn = findViewById(R.id.addBtn);
-
-        mRecycleView.setHasFixedSize(true);
+//        mRecycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        mRecycleView.setLayoutManager(layoutManager);
+//        mRecycleView.setLayoutManager(layoutManager);
 
-        pd = new ProgressDialog(this);
-
+       pd = new ProgressDialog(this);
         showData();
 
         mAddBtn.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +91,7 @@ public class cuslist  extends AppCompatActivity{
                         }
                         adapter = new clientadapter(cuslist.this, modelList);
 
-                        mRecycleView.setAdapter(adapter);
+//                        mRecycleView.setAdapter(adapter);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -104,8 +101,9 @@ public class cuslist  extends AppCompatActivity{
                         Toast.makeText(cuslist.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
+
     }
-
-
 
 }
