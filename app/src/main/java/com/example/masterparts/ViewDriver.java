@@ -30,11 +30,11 @@ public class ViewDriver extends RecyclerView.ViewHolder {
                 return true;
             }
         });
-        mfirstname = itemView.findViewById(R.id.rTitletv);
-        mlastname = itemView.findViewById(R.id.rRegtv);
-        mnic= itemView.findViewById(R.id.renginetv);
-        mtpnumber= itemView.findViewById(R.id.rfueltv);
-        memail = itemView.findViewById(R.id.raddresstv);
+        mfirstname = itemView.findViewById(R.id.firstname);
+        mlastname = itemView.findViewById(R.id.lastname);
+        mnic= itemView.findViewById(R.id.nic);
+        mtpnumber= itemView.findViewById(R.id.tpnumber);
+        memail = itemView.findViewById(R.id.email);
 
     }
 

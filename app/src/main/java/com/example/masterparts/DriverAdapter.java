@@ -17,13 +17,13 @@ import java.util.List;
 public class DriverAdapter extends RecyclerView.Adapter<ViewDriver> {
 
     DriverList DriverList;
-    List<DriverModel> DriverModel;
+    List<DriverModel> DriverModelList;
     Context context;
 
-    public DriverAdapter(DriverList DriverList, List<DriverModel> DriverModel){
+    public DriverAdapter(DriverList DriverList, List<DriverModel> DriverModelList){
 
         this.DriverList = DriverList;
-        this.DriverModel = DriverModel;
+        this.DriverModelList = DriverModelList;
     }
 
     @NonNull
@@ -36,11 +36,11 @@ public class DriverAdapter extends RecyclerView.Adapter<ViewDriver> {
         ViewDriver.setOnClickListener(new ViewDriver.ClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                String firstname = DriverModel.get(position).getFirstname();
-                String lastname = DriverModel.get(position).getLastname();
-                String nic = DriverModel.get(position).getNic();
-                String tpnumber = DriverModel.get(position).getTpnumber();
-                String email = DriverModel.get(position).getEmail();
+                String firstname = DriverModelList.get(position).getFirstname();
+                String lastname = DriverModelList.get(position).getLastname();
+                String nic = DriverModelList.get(position).getNic();
+                String tpnumber = DriverModelList.get(position).getTpnumber();
+                String email = DriverModelList.get(position).getEmail();
                 Toast.makeText(DriverList, firstname+"\n"+email ,Toast.LENGTH_SHORT).show();
 
             }
@@ -54,12 +54,12 @@ public class DriverAdapter extends RecyclerView.Adapter<ViewDriver> {
                     public void onClick(DialogInterface dialogInterface, int which) {
 
                         if (which == 0){
-                            String id = DriverModel.get(position).getId();
-                            String firstname = DriverModel.get(position).getFirstname();
-                            String lastname = DriverModel.get(position).getLastname();
-                            String nic = DriverModel.get(position).getNic();
-                            String tpnumber = DriverModel.get(position).getTpnumber();
-                            String email = DriverModel.get(position).getEmail();
+                            String id = DriverModelList.get(position).getId();
+                            String firstname = DriverModelList.get(position).getFirstname();
+                            String lastname = DriverModelList.get(position).getLastname();
+                            String nic = DriverModelList.get(position).getNic();
+                            String tpnumber = DriverModelList.get(position).getTpnumber();
+                            String email = DriverModelList.get(position).getEmail();
 
                             Intent intent = new Intent(DriverList,JnithaActivity.class);
                             intent.putExtra("pId",id);
@@ -87,15 +87,15 @@ public class DriverAdapter extends RecyclerView.Adapter<ViewDriver> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewDriver viewHolder, int i) {
-        viewHolder.mfirstname.setText(DriverModel.get(i).getFirstname());
-        viewHolder.mlastname.setText(DriverModel.get(i).getLastname());
-        viewHolder.mnic.setText(DriverModel.get(i).getNic());
-        viewHolder.mtpnumber.setText(DriverModel.get(i).getTpnumber());
-        viewHolder.memail.setText(DriverModel.get(i).getEmail());
+        viewHolder.mfirstname.setText(DriverModelList.get(i).getFirstname());
+        viewHolder.mlastname.setText(DriverModelList.get(i).getLastname());
+        viewHolder.mnic.setText(DriverModelList.get(i).getNic());
+        viewHolder.mtpnumber.setText(DriverModelList.get(i).getTpnumber());
+        viewHolder.memail.setText(DriverModelList.get(i).getEmail());
     }
 
     @Override
     public int getItemCount() {
-        return DriverModel.size();
+        return DriverModelList.size();
     }
 }
