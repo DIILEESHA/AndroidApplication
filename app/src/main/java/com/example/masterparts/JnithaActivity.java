@@ -171,7 +171,8 @@ public class JnithaActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(JnithaActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(JnithaActivity.this, "Updated", Toast.LENGTH_SHORT)
+                                .show();
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -188,9 +189,9 @@ public class JnithaActivity extends AppCompatActivity {
 
     private void uploadData(String firstname, String lastname, String nic, String tpnumber, String email) {
 
-        pd.setTitle("Processing");
+        //pd.setTitle("Processing");
 
-        pd.show();
+        //pd.show();
 
         String id = UUID.randomUUID().toString();
 

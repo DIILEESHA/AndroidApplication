@@ -112,8 +112,8 @@ public class DriverList extends AppCompatActivity {
     }
 
     public void deleteData(int index) {
-        pd.setTitle("Deleting Data");
-        pd.show();
+        //pd.setTitle("Deleting Data");
+        //pd.show();
 
         db.collection("Drivers").document(modelList.get(index).getId())
                 .delete()
