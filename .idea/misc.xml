@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/drawable/background_bg.xml" value="0.17962962962962964" />
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/drawable/driverform.xml" value="0.17962962962962964" />
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/drawable/form.xml" value="0.17962962962962964" />
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_add.xml" value="0.2" />
         <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_driver_adapter.xml" value="0.2" />
-        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_driver_list.xml" value="0.1" />
-        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_driver_model.xml" value="0.2" />
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_driver_list.xml" value="0.25" />
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_driver_model.xml" value="0.33" />
         <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_isuru.xml" value="0.1296875" />
-        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_jnitha.xml" value="0.1" />
+        <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_jnitha.xml" value="0.2" />
         <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_list.xml" value="0.2" />
         <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_spare_list.xml" value="0.2" />
         <entry key="..\:/MAD 1/AndroidApplication/app/src/main/res/layout/activity_view_driver.xml" value="0.2" />
