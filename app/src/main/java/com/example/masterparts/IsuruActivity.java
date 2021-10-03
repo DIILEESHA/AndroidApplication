@@ -152,16 +152,16 @@ public class IsuruActivity extends AppCompatActivity {
                 }
 
 
-                String vehicleName = mVehicleName.getText().toString().trim();
-                String sparepart = mSparePart.getText().toString().trim();
-                String place = mPlace.getText().toString().trim();
-                String modle = mModle.getText().toString().trim();
-                String price = mPrice.getText().toString().trim();
-                String contactNumber = mContactNumber.getText().toString().trim();
-                String description = mDescription.getText().toString().trim();;
-
-
-                uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
+//                String vehicleName = mVehicleName.getText().toString().trim();
+//                String sparepart = mSparePart.getText().toString().trim();
+//                String place = mPlace.getText().toString().trim();
+//                String modle = mModle.getText().toString().trim();
+//                String price = mPrice.getText().toString().trim();
+//                String contactNumber = mContactNumber.getText().toString().trim();
+//                String description = mDescription.getText().toString().trim();;
+//
+//
+//                uploadData(vehicleName,sparepart,place,modle,price,contactNumber,description);
 
             }
 
@@ -182,7 +182,7 @@ public class IsuruActivity extends AppCompatActivity {
         pd.setTitle("Updating....");
 
         pd.show();
-        db.collection("Documents").document(id)
+        db.collection("parts").document(id)
                 .update("vehicleName",vehicleName,"sparePart",sparePart,"place",place,"model",model,"price",price,"contactNumber",contactNumber,"description",description)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
