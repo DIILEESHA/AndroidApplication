@@ -215,7 +215,7 @@ public class JnithaActivity extends AppCompatActivity {
 
                         pd.dismiss();
                         new SweetAlertDialog(JnithaActivity.this,SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Successefully!")
+                                .setTitleText("Driver Details Added Successefully!")
                                 .show();
                     }
                 })
