@@ -26,6 +26,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -34,8 +35,8 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class AddActivity<uri> extends AppCompatActivity {
 
     //view
-    EditText mTitleEt, mDescriptionEt,mBrandEt,mEnginecEt,mFueluseEt,mAddressEt;
-    Button mSaveBtn,mListBtn;
+    EditText mTitleEt, mDescriptionEt, mBrandEt, mEnginecEt, mFueluseEt, mAddressEt;
+    Button mSaveBtn, mListBtn;
 
     //dialog
     ProgressDialog pd;
@@ -43,7 +44,7 @@ public class AddActivity<uri> extends AppCompatActivity {
     //firebase instance
     FirebaseFirestore db;
 
-    String pId,pTitle,pDescription,pBrand,pEnginec,pFueluse,pAddress;
+    String pId, pTitle, pDescription, pBrand, pEnginec, pFueluse, pAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,30 +62,29 @@ public class AddActivity<uri> extends AppCompatActivity {
         mSaveBtn = findViewById(R.id.saveBtn);
         mListBtn = findViewById(R.id.listBtn);
 
-                Bundle bundle = getIntent().getExtras();
-                if(bundle != null){
-                    //actionBar.setTitle("Update Data ");
-                    mSaveBtn.setText("Update Data");
-                    pId = bundle.getString("pId");
-                    pTitle = bundle.getString("pTitle");
-                    pDescription = bundle.getString("pDescription");
-                    pBrand = bundle.getString("pBrand");
-                    pEnginec = bundle.getString("pEnginec");
-                    pFueluse = bundle.getString("pFueluse");
-                    pAddress = bundle.getString("pAddress");
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            //actionBar.setTitle("Update Data ");
+            mSaveBtn.setText("Update Data");
+            pId = bundle.getString("pId");
+            pTitle = bundle.getString("pTitle");
+            pDescription = bundle.getString("pDescription");
+            pBrand = bundle.getString("pBrand");
+            pEnginec = bundle.getString("pEnginec");
+            pFueluse = bundle.getString("pFueluse");
+            pAddress = bundle.getString("pAddress");
 
-                    mTitleEt.setText(pTitle);
-                    mDescriptionEt.setText(pDescription);
-                    mBrandEt.setText(pBrand);
-                    mEnginecEt.setText(pEnginec);
-                    mFueluseEt.setText(pFueluse);
-                    mAddressEt.setText(pAddress);
+            mTitleEt.setText(pTitle);
+            mDescriptionEt.setText(pDescription);
+            mBrandEt.setText(pBrand);
+            mEnginecEt.setText(pEnginec);
+            mFueluseEt.setText(pFueluse);
+            mAddressEt.setText(pAddress);
 
-                }
-                else{
+        } else {
 
-                    mSaveBtn.setText("Save");
-                }
+            mSaveBtn.setText("Save");
+        }
 
         //progress
         pd = new ProgressDialog(this);
@@ -97,8 +97,8 @@ public class AddActivity<uri> extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Bundle bundle1 = getIntent().getExtras();
-                if (bundle != null){
-                     String id = pId;
+                if (bundle != null) {
+                    String id = pId;
                     String title = mTitleEt.getText().toString().trim();
                     String description = mDescriptionEt.getText().toString().trim();
                     String brand = mBrandEt.getText().toString().trim();
@@ -106,9 +106,8 @@ public class AddActivity<uri> extends AppCompatActivity {
                     String fueluse = mFueluseEt.getText().toString().trim();
                     String address = mAddressEt.getText().toString().trim();
 
-                    updateData(id,title,description,brand,enginec,fueluse,address);
-                }
-                else{
+                    updateData(id, title, description, brand, enginec, fueluse, address);
+                } else {
                     String title = mTitleEt.getText().toString().trim();
                     String description = mDescriptionEt.getText().toString().trim();
                     String brand = mBrandEt.getText().toString().trim();
@@ -119,51 +118,41 @@ public class AddActivity<uri> extends AppCompatActivity {
                     if (TextUtils.isEmpty(title)) {
                         mTitleEt.setError("Plz enter the value");
                         return;
-                    }
-                    else if (TextUtils.isEmpty(description)) {
+                    } else if (TextUtils.isEmpty(description)) {
                         mDescriptionEt.setError("Fieled is Empty");
                         return;
-                    }
-                    else if (TextUtils.isDigitsOnly(brand)) {
+                    } else if (TextUtils.isDigitsOnly(brand)) {
                         mBrandEt.setError("Plz enter the Word");
                         return;
-                    }
-                    else if (TextUtils.isEmpty(enginec)) {
+                    } else if (TextUtils.isEmpty(enginec)) {
                         mEnginecEt.setError("Field is Empty");
                         return;
-                    }
-                    else if (TextUtils.isEmpty(fueluse)) {
+                    } else if (TextUtils.isEmpty(fueluse)) {
                         mFueluseEt.setError("Field is Empty");
-                    }
-                    else if (TextUtils.isEmpty(address)) {
+                    } else if (TextUtils.isEmpty(address)) {
                         mAddressEt.setError("Field is Empty");
 
 
-                    }
-                    else if(title.length()==0){
+                    } else if (title.length() == 0) {
                         mTitleEt.setError("empty");
 
-                    }
-                    else if(description.length()==0){
+                    } else if (description.length() == 0) {
                         mDescriptionEt.setError("empty");
 
-                    }
-                    else if(brand.length()==0){
+                    } else if (brand.length() == 0) {
                         mBrandEt.setError("empty");
 
-                    }
-                    else if(enginec.length()==0){
+                    } else if (enginec.length() == 0) {
                         mEnginecEt.setError("empty");
 
-                    }
-                    else if(fueluse.length()==0){
+                    } else if (fueluse.length() == 0) {
                         mFueluseEt.setError("empty");
 
-                    }else if(address.length()==0){
+                    } else if (address.length() == 0) {
                         mAddressEt.setError("empty");
 
                     }
-                    uploadData(title, description,brand,enginec,fueluse,address);
+                   uploadData(title, description,brand,enginec,fueluse,address);
                 }
 
                 //input data
@@ -175,29 +164,29 @@ public class AddActivity<uri> extends AppCompatActivity {
                 String address = mAddressEt.getText().toString();
 
                 //function call to upload data
-                uploadData(title, description ,brand ,enginec ,fueluse ,address);
+                //uploadData(title, description, brand, enginec, fueluse, address);
 
 
             }
 
         });
-            mListBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(AddActivity.this ,ListActivity.class));
-                    finish();
-                }
-            });
+        mListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddActivity.this, ListActivity.class));
+                finish();
+            }
+        });
     }
 
     private void updateData(String id, String title, String description, String brand, String enginec, String fueluse, String address) {
         db.collection("Documents").document(id)
-                .update("title",title,"description",description,"brand",brand,"enginec",enginec,"fueluse",fueluse,"address",address)
+                .update("title", title, "search",title.toLowerCase(),"description", description, "brand", brand, "enginec", enginec, "fueluse", fueluse, "address", address)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
-                        new SweetAlertDialog(AddActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                        new SweetAlertDialog(AddActivity.this, SweetAlertDialog.SUCCESS_TYPE)
                                 .setTitleText("Update successfully !")
                                 .show();
 
@@ -206,30 +195,31 @@ public class AddActivity<uri> extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
 
-                new SweetAlertDialog(AddActivity.this,SweetAlertDialog.ERROR_TYPE)
+                new SweetAlertDialog(AddActivity.this, SweetAlertDialog.ERROR_TYPE)
                         .setTitleText("Try Again!")
                         .show();
             }
         });
     }
 
-    private void uploadData(String title, String description,String brand, String enginec, String fueluse, String address) {
+    private void uploadData(String title, String description, String brand, String enginec, String fueluse, String address) {
         String id = UUID.randomUUID().toString();
         Map<String, Object> doc = new HashMap<>();
         doc.put("id", id);
         doc.put("title", title);
+        doc.put("search", title.toLowerCase());
         doc.put("description", description);
-       doc.put("brand", brand);
-        doc.put("enginec",enginec);
-        doc.put("fueluse",fueluse);
-       doc.put("address",address);
+        doc.put("brand", brand);
+        doc.put("enginec", enginec);
+        doc.put("fueluse", fueluse);
+        doc.put("address", address);
         db.collection("Documents").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         pd.dismiss();
-                        new SweetAlertDialog(AddActivity.this,SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("Successefully!")
+                        new SweetAlertDialog(AddActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Successefully!")
                                 .show();
                     }
                 })
@@ -238,11 +228,12 @@ public class AddActivity<uri> extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
 
                         pd.dismiss();
-                            new SweetAlertDialog(AddActivity.this,SweetAlertDialog.ERROR_TYPE)
-                                    .setTitleText("Something went wrong")
-                                    .show();
+                        new SweetAlertDialog(AddActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Something went wrong")
+                                .show();
 
                     }
                 });
     }
+
 }

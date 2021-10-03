@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,16 +16,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class clientadapter extends RecyclerView.Adapter<ViewHolder> {
+
+
     cuslist cuslist;
-    ListActivity listActivity;
     List<Model> modelList;
     Context context;
 
     public clientadapter(cuslist listActivity, List<Model> modelList) {
-        this.cuslist =cuslist;
+        this.cuslist = cuslist;
         this.modelList = modelList;
 
     }
+
+
 
     @NonNull
     @Override
@@ -44,14 +48,15 @@ public class clientadapter extends RecyclerView.Adapter<ViewHolder> {
                 String fuel = modelList.get(position).getFueluse();
                 String addr = modelList.get(position).getAddress();
                 String desc = modelList.get(position).getDescription();
-                Toast.makeText(listActivity, title+"\n"+desc ,Toast.LENGTH_SHORT).show();
+                Toast.makeText(cuslist, title+"\n"+desc ,Toast.LENGTH_SHORT).show();
 
             }
+
 
             @Override
             public void onItemLongClick(View view, int position) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(listActivity);
+                AlertDialog.Builder builder = new AlertDialog.Builder(cuslist);
 
 
                 String[] options = {"Update", "Delete"};
@@ -68,7 +73,7 @@ public class clientadapter extends RecyclerView.Adapter<ViewHolder> {
                             String fueluse = modelList.get(position).getFueluse();
                             String address = modelList.get(position).getAddress();
 
-                            Intent intent = new Intent(listActivity,AddActivity.class);
+                            Intent intent = new Intent(cuslist,AddActivity.class);
                             intent.putExtra("pId",id);
                             intent.putExtra("pTitle",title);
                             intent.putExtra("pDescription",description);
@@ -77,10 +82,10 @@ public class clientadapter extends RecyclerView.Adapter<ViewHolder> {
                             intent.putExtra("pFueluse",fueluse);
                             intent.putExtra("pAddress",address);
 //
-                            listActivity.startActivity(intent);
+                            cuslist.startActivity(intent);
                         }
                         if(which == 1){
-                            listActivity.deleteData(position);
+//                            cuslist.deleteData(position);
 
                         }
                     }
@@ -106,5 +111,9 @@ public class clientadapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public int getItemCount() {
         return modelList.size();
+
+
     }
+
 }
+
