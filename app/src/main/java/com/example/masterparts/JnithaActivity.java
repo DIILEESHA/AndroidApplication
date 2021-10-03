@@ -134,24 +134,24 @@ public class JnithaActivity extends AppCompatActivity {
                                 .setTitleText("All fields are empty ")
                                 .show();
                     }
-
+                    uploadData(firstname,lastname,nic,tpnumber,email);
                 }
 
-
-                String firstname = mFirstName.getText().toString().trim();
-                String lastname = mLastName.getText().toString().trim();
-                String nic = mNIC.getText().toString().trim();
-                String tpnumber = mTpNumber.getText().toString().trim();
-                String email = mEmail.getText().toString().trim();
-
-
-              uploadData(firstname,lastname,nic,tpnumber,email);
+//
+//                String firstname = mFirstName.getText().toString().trim();
+//                String lastname = mLastName.getText().toString().trim();
+//                String nic = mNIC.getText().toString().trim();
+//                String tpnumber = mTpNumber.getText().toString().trim();
+//                String email = mEmail.getText().toString().trim();
+//
+//
+//              uploadData(firstname,lastname,nic,tpnumber,email);
 
             }
 
-
-
         });
+
+
         mViewDriverDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
