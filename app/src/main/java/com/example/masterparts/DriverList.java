@@ -57,6 +57,7 @@ public class DriverList extends AppCompatActivity {
 
         mRecycleView = findViewById(R.id.recycle_view);
         mAddBtn = findViewById(R.id.addBtn12);
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
 
         mRecycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -137,45 +138,44 @@ public class DriverList extends AppCompatActivity {
                                 .show();
                     }
                 });
-//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                pd.setTitle("Loading !!");
-//                pd.show();
-//                db.collection("Drivers")
-//                        .get()
-//                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                                pd.dismiss();
-//                                for (DocumentSnapshot doc : task.getResult()) {
-//                                    DriverModel model = new DriverModel(doc.getString("id"),
-//                                            doc.getString("firstname"),
-//                                            doc.getString("lastname"),
-//                                            doc.getString("nic"),
-//                                            doc.getString("tpnumber"),
-//                                            doc.getString("email"));
-//
-//
-//                                    modelList.add(model);
-//                                }
-//
-//                                adapter = new DriverAdapter(DriverList.this, modelList);
-//
-//                                mRecycleView.setAdapter(adapter);
-//                            }
-//                        })
-//                        .addOnFailureListener(new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//                                pd.dismiss();
-//                                Toast.makeText(DriverList.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//
-//                            }
-//                        });
-//                swipeRefreshLayout.setRefreshing(false);
-//            }
-//
-//        });
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                pd.setTitle("Loading !!");
+                pd.show();
+                db.collection("Drivers")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                pd.dismiss();
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    DriverModel model = new DriverModel(doc.getString("id"),
+                                            doc.getString("firstname"),
+                                            doc.getString("lastname"),
+                                            doc.getString("nic"),
+                                            doc.getString("tpnumber"),
+                                            doc.getString("email"));
+
+
+                                    modelList.add(model);
+                                }
+
+                                adapter = new DriverAdapter(DriverList.this, modelList);
+
+                                mRecycleView.setAdapter(adapter);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                pd.dismiss();
+                                Toast.makeText(DriverList.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                swipeRefreshLayout.setRefreshing(false);
+            }
+
+        });
       }
 }
