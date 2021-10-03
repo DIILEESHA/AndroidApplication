@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class cusdashboard extends AppCompatActivity {
 
     public CardView main1, main2, main3, main4, main5, main6;
@@ -31,12 +33,12 @@ public class cusdashboard extends AppCompatActivity {
             }
 
         });
-        main2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(cusdashboard.this,cuslist.class));
-            }
-        });
+//        main2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(cusdashboard.this,cuslist.class));
+//            }
+//        });
 
 
 //        });
@@ -54,8 +56,20 @@ public class cusdashboard extends AppCompatActivity {
 
             }
         });
+
+
+        main6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(cusdashboard.this, Login.class));
+            }
+        });
     }
 }
+
+
+
 
 //        main4.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -71,13 +85,8 @@ public class cusdashboard extends AppCompatActivity {
 //
 //            }
 //        });
-//        main6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FirebaseAuth.getInstance().signOut();
-//                startActivity(new Intent(Dashboard.this, Login.class));
-//
-//            }
+
+
 //
 //            public void logout(View view) {
 //

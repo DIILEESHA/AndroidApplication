@@ -219,7 +219,7 @@ public class AddActivity<uri> extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         pd.dismiss();
                         new SweetAlertDialog(AddActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Successefully!")
+                                .setTitleText("Details Added Successefully!")
                                 .show();
                     }
                 })

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/form"
+    android:background="@drawable/sin"
     android:padding="10dp"
     tools:context=".AddActivity">
 
@@ -17,6 +17,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/aclonica"
         android:text="Vehicle Details"
+        android:textColor="@color/white"
         android:textSize="37sp"
         android:textStyle="bold" />
 
@@ -93,13 +94,13 @@
     <Button
         android:id="@+id/saveBtn"
         style="@style/Animation.Design.BottomSheetDialog"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:forceHasOverlappingRendering="true"
         android:layout_marginTop="45dp"
         android:text="Save"
-        android:backgroundTint="@color/main_orange_stroke_color"
+        android:backgroundTint="@color/purple_700"
         android:textStyle="italic"/>
 
     <Button

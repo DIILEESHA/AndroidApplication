@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sin"
+    android:background="@drawable/naa"
     tools:context=".Login">
 
     <TextView
@@ -15,19 +15,19 @@
         android:includeFontPadding="true"
         android:shadowColor="#FD5454"
         android:text="Login"
-        android:textColor="#FFEB3B"
-        android:textSize="50sp"
+        android:textColor="#000"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <EditText
         android:id="@+id/Login2"
-        android:layout_width="291dp"
+        android:layout_width="320dp"
         android:layout_height="39dp"
         android:backgroundTint="#C11111"
         android:backgroundTintMode="src_atop"
@@ -48,7 +48,7 @@
 
     <EditText
         android:id="@+id/Password2"
-        android:layout_width="292dp"
+        android:layout_width="320dp"
         android:layout_height="40dp"
         android:backgroundTint="#C11111"
         android:backgroundTintMode="src_atop"
@@ -68,31 +68,31 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="212dp"
-        android:layout_height="42dp"
+        android:layout_width="288dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="76dp"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password2"
+        app:layout_constraintVertical_bias="0.221"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="171dp"
         android:layout_height="47dp"
-        android:text="Don`t have an account? Create New One"
+        android:text="Don`t have an account?Sign up"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="15dp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.824" />
 
     <ProgressBar
         android:id="@+id/progressBar"
