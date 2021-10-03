@@ -5,35 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start|fill"
+    android:background="@drawable/ty"
     android:backgroundTint="#009688"
     android:backgroundTintMode="screen"
     tools:context=".JnithaActivity">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        android:fontFamily="@font/atomic_age"
-        android:text="Driver Signup"
-        android:textAlignment="center"
-        android:textColor="#E91E63"
+
+    <Button
+        android:id="@+id/Register"
+        android:layout_width="354dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="75dp"
+        android:backgroundTint="#A33030"
+        android:text="Register"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.757"
+        tools:ignore="TouchTargetSizeCheck" />
 
-
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="354dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#4CAF50"
+        android:text="View Driver Details"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 
     <EditText
         android:id="@+id/fname"
         android:layout_width="280dp"
         android:layout_height="36dp"
-        android:background="@drawable/text"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_edittext"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,14 +63,12 @@
         app:layout_constraintVertical_bias="0.12"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-
-
-
     <EditText
         android:id="@+id/email"
         android:layout_width="280dp"
         android:layout_height="36dp"
-        android:background="@drawable/text"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_edittext"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +83,8 @@
         android:id="@+id/tp"
         android:layout_width="280dp"
         android:layout_height="36dp"
-        android:background="@drawable/text"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_edittext"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +99,8 @@
         android:id="@+id/nic"
         android:layout_width="280dp"
         android:layout_height="36dp"
-        android:background="@drawable/text"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_edittext"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -92,11 +111,13 @@
         app:layout_constraintVertical_bias="0.277"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+
     <EditText
         android:id="@+id/lname"
         android:layout_width="280dp"
         android:layout_height="36dp"
-        android:background="@drawable/text"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_edittext"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,15 +128,33 @@
         app:layout_constraintVertical_bias="0.2"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="335dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/atomic_age"
+        android:text="Driver Signup"
+        android:textAlignment="center"
+        android:textColor="#0E0E0E"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
         android:scrollbarStyle="outsideInset"
         android:text="First Name"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,10 +167,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
         android:scrollbarStyle="outsideInset"
         android:text="Last Name"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,14 +181,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.205" />
 
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
         android:scrollbarStyle="outsideInset"
         android:text="NIC"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,10 +204,12 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
         android:scrollbarStyle="outsideInset"
         android:text="Tp Number"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,15 +218,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.359" />
 
-
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
         android:text="Email"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,36 +234,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.433" />
-
-    <Button
-        android:id="@+id/Register"
-        android:layout_width="354dp"
-        android:layout_height="47dp"
-        android:backgroundTint="#A33030"
-        android:text="Register"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.631"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="354dp"
-        android:layout_height="45dp"
-        android:backgroundTint="#4CAF50"
-        android:text="View Driver Details"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -230,8 +230,9 @@ public class IsuruActivity extends AppCompatActivity {
 
 
                         pd.dismiss();
-                        Toast.makeText(IsuruActivity.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
-
+                        new SweetAlertDialog(IsuruActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Successefully!")
+                                .show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
