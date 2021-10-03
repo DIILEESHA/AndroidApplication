@@ -86,7 +86,7 @@ public class DriverList extends AppCompatActivity {
                         pd.dismiss();
                         for (DocumentSnapshot doc : task.getResult()) {
                             DriverModel model = new DriverModel(doc.getString("id"),
-                                    doc.getString("firtname"),
+                                    doc.getString("firstname"),
                                     doc.getString("lastname"),
                                     doc.getString("nic"),
                                     doc.getString("tpnumber"),

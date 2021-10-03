@@ -134,7 +134,7 @@ public class JnithaActivity extends AppCompatActivity {
                                 .setTitleText("All fields are empty ")
                                 .show();
                     }
-                    uploadData(firstname,lastname,nic,tpnumber,email);
+
                 }
 
 
@@ -145,7 +145,7 @@ public class JnithaActivity extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
 
 
-                uploadData(firstname,lastname,nic,tpnumber,email);
+//                uploadData(firstname,lastname,nic,tpnumber,email);
 
             }
 
@@ -163,15 +163,16 @@ public class JnithaActivity extends AppCompatActivity {
 
     private void updateData(String id, String firstname,String lastname,String nic,String tpnumber,String email) {
 
-        pd.setTitle("Updating....");
+         //pd.setTitle("Updating....");
+        // pd.show();
 
-        pd.show();
         db.collection("Drivers").document(id)
                 .update("firstname",firstname,"lastname",lastname,"nic",nic,"tpnumber",tpnumber,"email",email)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(JnithaActivity.this, "Updated", Toast.LENGTH_SHORT)
+                        new SweetAlertDialog(JnithaActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Driver Details Updated Successefully!")
                                 .show();
 
                     }

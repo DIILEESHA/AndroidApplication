@@ -63,11 +63,11 @@ public class DriverAdapter extends RecyclerView.Adapter<ViewDriver> {
 
                             Intent intent = new Intent(DriverList,JnithaActivity.class);
                             intent.putExtra("pId",id);
-                            intent.putExtra("pfirstname",firstname);
-                            intent.putExtra("plastname",lastname);
-                            intent.putExtra("pnic",nic);
-                            intent.putExtra("ptpnumber",tpnumber);
-                            intent.putExtra("pemail",email);
+                            intent.putExtra("pFirstName",firstname);
+                            intent.putExtra("pLastName",lastname);
+                            intent.putExtra("pNIC",nic);
+                            intent.putExtra("pTpNumber",tpnumber);
+                            intent.putExtra("pEmail",email);
 
                             DriverList.startActivity(intent);
                         }
