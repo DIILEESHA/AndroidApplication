@@ -111,12 +111,5 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <Button
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_marginTop="170dp"/>
-
 
 </androidx.cardview.widget.CardView>
