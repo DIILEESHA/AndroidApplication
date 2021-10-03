@@ -214,8 +214,9 @@ public class JnithaActivity extends AppCompatActivity {
 
 
                         pd.dismiss();
-                        Toast.makeText(JnithaActivity.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
-
+                        new SweetAlertDialog(JnithaActivity.this,SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Successefully!")
+                                .show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
