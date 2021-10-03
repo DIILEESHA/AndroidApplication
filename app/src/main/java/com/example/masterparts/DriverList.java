@@ -171,7 +171,6 @@ public class DriverList extends AppCompatActivity {
                             public void onFailure(@NonNull Exception e) {
                                 pd.dismiss();
                                 Toast.makeText(DriverList.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
                             }
                         });
                 swipeRefreshLayout.setRefreshing(false);
