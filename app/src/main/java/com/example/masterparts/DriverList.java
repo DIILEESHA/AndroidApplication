@@ -23,6 +23,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
@@ -39,6 +40,8 @@ public class DriverList extends AppCompatActivity {
     DriverAdapter adapter;
 
     ProgressDialog pd;
+
+    SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -134,5 +137,45 @@ public class DriverList extends AppCompatActivity {
                                 .show();
                     }
                 });
-    }
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                pd.setTitle("Loading !!");
+                pd.show();
+                db.collection("Drivers")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                pd.dismiss();
+                                for (DocumentSnapshot doc : task.getResult()) {
+                                    DriverModel model = new DriverModel(doc.getString("id"),
+                                            doc.getString("firstname"),
+                                            doc.getString("lastname"),
+                                            doc.getString("nic"),
+                                            doc.getString("tpnumber"),
+                                            doc.getString("email"));
+
+
+                                    modelList.add(model);
+                                }
+
+                                adapter = new DriverAdapter(DriverList.this, modelList);
+
+                                mRecycleView.setAdapter(adapter);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                pd.dismiss();
+                                Toast.makeText(DriverList.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+                swipeRefreshLayout.setRefreshing(false);
+            }
+
+        });
+      }
 }

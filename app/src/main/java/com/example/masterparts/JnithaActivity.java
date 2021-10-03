@@ -145,7 +145,7 @@ public class JnithaActivity extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
 
 
-//                uploadData(firstname,lastname,nic,tpnumber,email);
+              uploadData(firstname,lastname,nic,tpnumber,email);
 
             }
 
